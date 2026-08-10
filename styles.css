@@ -645,7 +645,7 @@ body {
 }
 
 /* Specific Grade Pill Colors on Selection */
-.grade-pill.grade-S input[type="radio"]:checked + label { background: #2e7d32; border-color: #2e7d32; }
+.grade-pill.grade-EX input[type="radio"]:checked + label { background: #2e7d32; border-color: #2e7d32; }
 .grade-pill.grade-A input[type="radio"]:checked + label { background: #00897b; border-color: #00897b; }
 .grade-pill.grade-B input[type="radio"]:checked + label { background: #1976d2; border-color: #1976d2; }
 .grade-pill.grade-C input[type="radio"]:checked + label { background: #5e35b1; border-color: #5e35b1; }

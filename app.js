@@ -23,7 +23,7 @@ let fallbackCurriculum = null;
 
 // Grade Point Values
 const GRADE_POINTS = {
-  'S': 10,
+  'EX': 10,
   'A': 9,
   'B': 8,
   'C': 7,
@@ -249,8 +249,8 @@ const app = {
           </div>
         `;
       } else {
-        // Normal Credit S / A / B / C / D / E / F options
-        const grades = ['S', 'A', 'B', 'C', 'D', 'E', 'F'];
+        // Normal Credit EX / A / B / C / D / E / F options
+        const grades = ['EX', 'A', 'B', 'C', 'D', 'E', 'F'];
         gradeOptionsHTML = `<div class="grade-pill-group">` + grades.map(g => `
           <div class="grade-pill grade-${g}">
             <input type="radio" id="g_${index}_${g}" name="course_grade_${index}" value="${g}">
@@ -264,7 +264,6 @@ const app = {
           <strong>${course.name}</strong>
           ${isZero ? '<span class="zero-credit-tag">Zero Credit</span>' : ''}
         </td>
-        <td><span class="course-code-badge">${course.code}</span></td>
         <td><strong>${course.credits}</strong></td>
         <td>${gradeOptionsHTML}</td>
       `;
@@ -277,7 +276,6 @@ const app = {
   addCustomCourse() {
     const name = prompt("Enter Course Name:", "Professional Elective");
     if (!name) return;
-    const code = prompt("Enter Course Code:", "25XX3101") || "25XX0000";
     const creditsInput = prompt("Enter Credits (e.g., 3, 1.5, or 0 for zero-credit):", "3");
     if (creditsInput === null) return;
     
@@ -286,7 +284,7 @@ const app = {
 
     state.activeCourses.push({
       name: name,
-      code: code,
+      code: '',
       credits: credits,
       isZeroCredit: isZeroCredit
     });
@@ -418,7 +416,6 @@ const app = {
 
       tr.innerHTML = `
         <td><strong>${c.name}</strong> ${c.isZero ? '<span class="zero-credit-tag">Zero Credit</span>' : ''}</td>
-        <td><span class="course-code-badge">${c.code}</span></td>
         <td><strong>${c.credits}</strong></td>
         <td><span style="${gradeColorClass}">${c.grade}</span></td>
       `;
