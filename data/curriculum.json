@@ -28,8 +28,7 @@
             { "code": "20PCY1210", "name": "Chemistry Lab – II", "credits": 1, "isZeroCredit": false },
             { "code": "20PTE1201", "name": "Telugu – II", "credits": 3, "isZeroCredit": false },
             { "code": "20PIT1201", "name": "Open office & LATEX", "credits": 2, "isZeroCredit": false },
-            { "code": "20PIT1210", "name": "Open office & LATEX Lab", "credits": 1, "isZeroCredit": false },
-            { "code": "20PBE1201", "name": "Biology-II", "credits": 0, "isZeroCredit": true }
+            { "code": "20PIT1210", "name": "Open office & LATEX Lab", "credits": 1, "isZeroCredit": false }
           ]
         },
         "puc2_sem1": {
@@ -43,8 +42,7 @@
             { "code": "20PCY2110", "name": "Chemistry Lab – III", "credits": 1, "isZeroCredit": false },
             { "code": "20PTE2101", "name": "Telugu – III", "credits": 3, "isZeroCredit": false },
             { "code": "20PIT2101", "name": "Web designing with HTML, CSS, and Introduction to Programming", "credits": 2, "isZeroCredit": false },
-            { "code": "20PIT2110", "name": "Web designing using HTML and CSS Lab", "credits": 1, "isZeroCredit": false },
-            { "code": "20PB2101", "name": "Biology-III", "credits": 0, "isZeroCredit": true }
+            { "code": "20PIT2110", "name": "Web designing using HTML and CSS Lab", "credits": 1, "isZeroCredit": false }
           ]
         },
         "puc2_sem2": {
