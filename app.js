@@ -472,24 +472,75 @@ const app = {
 
   // Cumulative CGPA Modal Functions
   initCgpaModalRows() {
-    const container = document.getElementById('cgpa-rows-container');
-    container.innerHTML = '';
-    for (let i = 1; i <= 4; i++) {
-      this.addCgpaRow(`Semester ${i}`);
-    }
+    this.setCgpaProgram(state.selectedProgram === 'puc' ? 'puc' : 'engineering');
   },
 
-  addCgpaRow(labelPrefix = null) {
+  setCgpaProgram(type) {
+    state.cgpaProgram = type;
+
+    // Toggle button active classes
+    const pucBtn = document.getElementById('cgpa-tab-puc');
+    const engBtn = document.getElementById('cgpa-tab-eng');
+    const customBtn = document.getElementById('cgpa-tab-custom');
+
+    if (pucBtn && engBtn && customBtn) {
+      pucBtn.className = type === 'puc' ? 'btn btn-primary' : 'btn btn-secondary';
+      engBtn.className = type === 'engineering' ? 'btn btn-primary' : 'btn btn-secondary';
+      customBtn.className = type === 'custom' ? 'btn btn-primary' : 'btn btn-secondary';
+    }
+
     const container = document.getElementById('cgpa-rows-container');
+    if (!container) return;
+    container.innerHTML = '';
+
+    if (type === 'puc') {
+      const labels = ['PUC-I Sem-I', 'PUC-I Sem-II', 'PUC-II Sem-I', 'PUC-II Sem-II'];
+      const defaultCredits = [24, 24, 24, 24]; // Standard credits
+
+      labels.forEach((lbl, idx) => {
+        this.addCgpaRow(lbl, '', defaultCredits[idx] || 24);
+      });
+    } else if (type === 'engineering') {
+      const labels = ['E1-S1', 'E1-S2', 'E2-S1', 'E2-S2', 'E3-S1', 'E3-S2', 'E4-S1', 'E4-S2'];
+      
+      // Auto-fill credits from active branch if available
+      let branchSemesters = null;
+      if (state.curriculumData && state.selectedBranch && state.curriculumData.engineering[state.selectedBranch]) {
+        branchSemesters = state.curriculumData.engineering[state.selectedBranch].semesters;
+      }
+
+      labels.forEach((lbl, idx) => {
+        let creditsVal = 20;
+        const semKey = `e${Math.floor(idx/2)+1}s${(idx%2)+1}`;
+
+        if (branchSemesters && branchSemesters[semKey]) {
+          creditsVal = branchSemesters[semKey].courses.reduce((sum, c) => sum + (c.isZeroCredit ? 0 : c.credits), 0);
+        }
+
+        this.addCgpaRow(lbl, '', creditsVal);
+      });
+    } else {
+      for (let i = 1; i <= 4; i++) {
+        this.addCgpaRow(`Semester ${i}`, '', 20);
+      }
+    }
+
+    document.getElementById('cgpa-result-box').style.display = 'none';
+  },
+
+  addCgpaRow(labelPrefix = null, defaultSgpa = '', defaultCredits = 20) {
+    const container = document.getElementById('cgpa-rows-container');
+    if (!container) return;
+    
     const rowCount = container.children.length + 1;
     const label = labelPrefix || `Semester ${rowCount}`;
 
     const row = document.createElement('div');
     row.className = 'cgpa-sem-row';
     row.innerHTML = `
-      <span style="font-size:0.85rem; font-weight:600; min-width: 90px;">${label}</span>
-      <input type="number" step="0.01" min="0" max="10" placeholder="SGPA (e.g. 8.5)" class="cgpa-sgpa-input">
-      <input type="number" step="0.5" min="0" placeholder="Credits (e.g. 24)" class="cgpa-credits-input">
+      <span style="font-size:0.85rem; font-weight:700; min-width: 100px; color: var(--text-main);">${label}</span>
+      <input type="number" step="0.01" min="0" max="10" value="${defaultSgpa}" placeholder="SGPA (e.g. 8.5)" class="cgpa-sgpa-input">
+      <input type="number" step="0.5" min="0" value="${defaultCredits}" placeholder="Credits" class="cgpa-credits-input">
     `;
     container.appendChild(row);
   },
@@ -500,6 +551,7 @@ const app = {
 
     let totalPoints = 0;
     let totalCredits = 0;
+    let validSemsCount = 0;
 
     sgpaInputs.forEach((sgpaIn, i) => {
       const sgpa = parseFloat(sgpaIn.value);
@@ -508,10 +560,11 @@ const app = {
       if (!isNaN(sgpa) && !isNaN(credits) && credits > 0) {
         totalPoints += sgpa * credits;
         totalCredits += credits;
+        validSemsCount++;
       }
     });
 
-    if (totalCredits === 0) {
+    if (totalCredits === 0 || validSemsCount === 0) {
       alert("Please enter valid SGPA and Credits for at least one semester.");
       return;
     }
@@ -519,7 +572,8 @@ const app = {
     const cgpa = (totalPoints / totalCredits).toFixed(2);
 
     document.getElementById('cgpa-val').textContent = cgpa;
-    document.getElementById('cgpa-total-credits-val').textContent = `Total Cumulative Credits: ${totalCredits}`;
+    document.getElementById('cgpa-detail-breakdown').textContent = 
+      `Total Points: ${totalPoints.toFixed(1)} ÷ Total Credits: ${totalCredits} (${validSemsCount} Semesters)`;
     document.getElementById('cgpa-result-box').style.display = 'block';
   },
 

@@ -370,34 +370,96 @@
 
   <!-- MODAL 1: Cumulative CGPA Calculator -->
   <div class="modal-overlay" id="cgpa-modal">
-    <div class="modal-card">
+    <div class="modal-card" style="max-width: 650px; max-height: 90vh; overflow-y: auto;">
       <button class="modal-close-btn" onclick="app.closeModal('cgpa-modal')">&times;</button>
-      <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-bottom: 0.5rem;">
-        <i class="fa-solid fa-calculator"></i> Cumulative CGPA Calculator
+      
+      <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary); margin-bottom: 0.25rem;">
+        <i class="fa-solid fa-chart-line"></i> Cumulative CGPA Calculator
       </h3>
       <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
-        Enter SGPA and Total Credits for each semester to compute your overall CGPA.
+        Calculate overall CGPA across your semesters for PUC (4 Semesters) or Engineering (8 Semesters).
       </p>
 
+      <!-- Program Selection Tabs inside CGPA Modal -->
+      <div style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem; background: var(--bg-subtle); padding: 4px; border-radius: var(--radius-pill); border: 1px solid var(--border-color);">
+        <button id="cgpa-tab-puc" class="btn btn-primary" style="flex:1; padding: 0.5rem 0.8rem; font-size: 0.85rem; border-radius: var(--radius-pill);" onclick="app.setCgpaProgram('puc')">
+          <i class="fa-solid fa-graduation-cap"></i> PUC (4 Sems)
+        </button>
+        <button id="cgpa-tab-eng" class="btn btn-secondary" style="flex:1; padding: 0.5rem 0.8rem; font-size: 0.85rem; border-radius: var(--radius-pill);" onclick="app.setCgpaProgram('engineering')">
+          <i class="fa-solid fa-microchip"></i> Engineering (8 Sems)
+        </button>
+        <button id="cgpa-tab-custom" class="btn btn-secondary" style="flex:1; padding: 0.5rem 0.8rem; font-size: 0.85rem; border-radius: var(--radius-pill);" onclick="app.setCgpaProgram('custom')">
+          <i class="fa-solid fa-sliders"></i> Custom
+        </button>
+      </div>
+
+      <!-- Semester Rows Input Container -->
       <div id="cgpa-rows-container">
-        <!-- Sem rows dynamically added -->
+        <!-- Sem rows dynamically populated -->
       </div>
 
-      <div style="display: flex; justify-content: space-between; margin-top: 1rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; flex-wrap: wrap; gap: 0.5rem;">
         <button class="btn btn-outline" style="padding: 0.4rem 1rem; font-size: 0.85rem;" onclick="app.addCgpaRow()">
-          <i class="fa-solid fa-plus"></i> Add Semester
+          <i class="fa-solid fa-plus"></i> Add Semester Row
         </button>
-        <button class="btn btn-primary" style="padding: 0.4rem 1.2rem; font-size: 0.85rem;" onclick="app.calculateCumulativeCGPA()">
-          Calculate CGPA
+        <button class="btn btn-primary" style="padding: 0.5rem 1.4rem; font-size: 0.9rem;" onclick="app.calculateCumulativeCGPA()">
+          Calculate CGPA <i class="fa-solid fa-calculator"></i>
         </button>
       </div>
 
-      <!-- CGPA Result Display -->
-      <div id="cgpa-result-box" style="display: none; margin-top: 1.25rem; padding: 1rem; background: var(--bg-subtle); border-radius: var(--radius-md); text-align: center; border: 1px solid var(--border-color);">
-        <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">OVERALL CUMULATIVE CGPA</div>
-        <div id="cgpa-val" style="font-family: var(--font-heading); font-size: 2.4rem; font-weight: 800; color: var(--primary);">0.00</div>
-        <div id="cgpa-total-credits-val" style="font-size: 0.85rem; color: var(--text-main); font-weight: 600;">Total Credits: 0</div>
+      <!-- CGPA Result Display Box -->
+      <div id="cgpa-result-box" style="display: none; margin-top: 1.25rem; padding: 1.25rem; background: var(--bg-subtle); border-radius: var(--radius-md); text-align: center; border: 2px solid var(--primary);">
+        <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">CUMULATIVE CGPA</div>
+        <div id="cgpa-val" style="font-family: var(--font-heading); font-size: 2.6rem; font-weight: 800; color: var(--primary); line-height: 1.1; margin: 4px 0;">0.00</div>
+        <div id="cgpa-detail-breakdown" style="font-size: 0.85rem; color: var(--text-main); font-weight: 600;">Total Points: 0 | Total Credits: 0</div>
       </div>
+
+      <!-- Educational Guide: What is CGPA & SGPA vs CGPA -->
+      <div style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem; text-align: left;">
+        <h4 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--text-main); margin-bottom: 1rem;">
+          <i class="fa-solid fa-book-open"></i> What is CGPA?
+        </h4>
+
+        <div style="background: var(--bg-subtle); border-radius: var(--radius-md); padding: 1.1rem; border: 1px solid var(--border-color); margin-bottom: 1rem;">
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.75rem;">
+            <strong>CGPA (Cumulative Grade Point Average)</strong> represents your overall academic performance across <strong>all semesters</strong> completed so far. It is calculated by dividing total credit points earned across all semesters by the total credits attempted.
+          </p>
+          <div style="background: var(--primary-dark); color: #ffffff; padding: 1rem; border-radius: var(--radius-sm); text-align: center; font-weight: 700; font-size: 0.92rem;">
+            CGPA = (Sum of Credit Points of All Semesters) ÷ (Total Credits of All Semesters)
+          </div>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.6rem;">
+            <em>Example:</em> If you score 720 total credit points with 80 total credits across 4 semesters, your CGPA = 720 ÷ 80 = <strong>9.00</strong>
+          </p>
+        </div>
+
+        <!-- SGPA vs CGPA Comparison -->
+        <h4 style="font-family: var(--font-heading); font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.75rem;">
+          <i class="fa-solid fa-columns"></i> SGPA vs CGPA Comparison
+        </h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
+          <div style="background: #111827; color: #ffffff; padding: 1rem; border-radius: var(--radius-md);">
+            <h5 style="color: #60a5fa; font-size: 1rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-calendar-day"></i> SGPA</h5>
+            <ul style="list-style: none; font-size: 0.8rem; line-height: 1.6; opacity: 0.9;">
+              <li>✔ <strong>Scope:</strong> Single Semester</li>
+              <li>✔ <strong>Purpose:</strong> Short-term performance</li>
+              <li>✔ <strong>Updates:</strong> Every semester</li>
+              <li>✔ <strong>Impact:</strong> Immediate feedback</li>
+            </ul>
+          </div>
+
+          <div style="background: linear-gradient(135deg, #800000 0%, #b71c1c 100%); color: #ffffff; padding: 1rem; border-radius: var(--radius-md);">
+            <h5 style="color: #ffe082; font-size: 1rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-chart-line"></i> CGPA</h5>
+            <ul style="list-style: none; font-size: 0.8rem; line-height: 1.6; opacity: 0.9;">
+              <li>✔ <strong>Scope:</strong> All Semesters</li>
+              <li>✔ <strong>Purpose:</strong> Overall program performance</li>
+              <li>✔ <strong>Updates:</strong> Cumulative record</li>
+              <li>✔ <strong>Impact:</strong> Degree classification</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </div>
 
