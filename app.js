@@ -441,7 +441,7 @@ const app = {
     const reportElement = document.getElementById('export-report-container');
     const opt = {
       margin:       0.4,
-      filename:     `RGUKT_${state.selectedBranch.toUpperCase()}_${state.selectedSemester}_Result.pdf`,
+      filename:     `Rajiv_Gandhi_University_${state.selectedBranch.toUpperCase()}_${state.selectedSemester}_Result.pdf`,
       image:        { type: 'jpeg', quality: 0.98 },
       html2canvas:  { scale: 2, useCORS: true, logging: false },
       jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
@@ -461,7 +461,7 @@ const app = {
     if (window.html2canvas) {
       window.html2canvas(reportElement, { scale: 3, useCORS: true }).then(canvas => {
         const link = document.createElement('a');
-        link.download = `RGUKT_${state.selectedBranch.toUpperCase()}_${state.selectedSemester}_Result.png`;
+        link.download = `Rajiv_Gandhi_University_${state.selectedBranch.toUpperCase()}_${state.selectedSemester}_Result.png`;
         link.href = canvas.toDataURL('image/png');
         link.click();
       });
