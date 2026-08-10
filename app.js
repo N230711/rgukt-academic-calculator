@@ -352,8 +352,8 @@ const app = {
     };
 
     // Capture Student Info
-    state.studentInfo.name = document.getElementById('student-name-input').value.trim() || 'Student';
-    state.studentInfo.id = document.getElementById('student-id-input').value.trim() || 'N/A';
+    state.studentInfo.name = document.getElementById('student-name-input').value.trim() || 'ABHI';
+    state.studentInfo.id = document.getElementById('student-id-input').value.trim() || 'N230XXX';
 
     this.renderResultView();
     this.goToStep(5);
