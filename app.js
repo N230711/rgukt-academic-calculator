@@ -494,24 +494,34 @@ const app = {
     container.innerHTML = '';
 
     if (type === 'puc') {
+      const semKeys = ['puc1_sem1', 'puc1_sem2', 'puc2_sem1', 'puc2_sem2'];
       const labels = ['PUC-I Sem-I', 'PUC-I Sem-II', 'PUC-II Sem-I', 'PUC-II Sem-II'];
-      const defaultCredits = [24, 24, 24, 24]; // Standard credits
-
-      labels.forEach((lbl, idx) => {
-        this.addCgpaRow(lbl, '', defaultCredits[idx] || 24);
-      });
-    } else if (type === 'engineering') {
-      const labels = ['E1-S1', 'E1-S2', 'E2-S1', 'E2-S2', 'E3-S1', 'E3-S2', 'E4-S1', 'E4-S2'];
       
-      // Auto-fill credits from active branch if available
-      let branchSemesters = null;
-      if (state.curriculumData && state.selectedBranch && state.curriculumData.engineering[state.selectedBranch]) {
-        branchSemesters = state.curriculumData.engineering[state.selectedBranch].semesters;
+      let pucSemesters = null;
+      if (state.curriculumData && state.selectedBranch && state.curriculumData.puc && state.curriculumData.puc[state.selectedBranch]) {
+        pucSemesters = state.curriculumData.puc[state.selectedBranch].semesters;
+      } else if (state.curriculumData && state.curriculumData.puc) {
+        pucSemesters = state.curriculumData.puc['mpc'] ? state.curriculumData.puc['mpc'].semesters : null;
       }
 
       labels.forEach((lbl, idx) => {
+        let creditsVal = 24;
+        const semKey = semKeys[idx];
+        if (pucSemesters && pucSemesters[semKey]) {
+          creditsVal = pucSemesters[semKey].courses.reduce((sum, c) => sum + (c.isZeroCredit ? 0 : c.credits), 0);
+        }
+        this.addCgpaRow(lbl, '', creditsVal);
+      });
+    } else if (type === 'engineering') {
+      const semKeys = ['e1s1', 'e1s2', 'e2s1', 'e2s2', 'e3s1', 'e3s2', 'e4s1', 'e4s2'];
+      const labels = ['E1-S1', 'E1-S2', 'E2-S1', 'E2-S2', 'E3-S1', 'E3-S2', 'E4-S1', 'E4-S2'];
+      
+      let branchKey = state.selectedBranch && state.curriculumData.engineering[state.selectedBranch] ? state.selectedBranch : 'aiml';
+      let branchSemesters = state.curriculumData ? state.curriculumData.engineering[branchKey].semesters : null;
+
+      labels.forEach((lbl, idx) => {
         let creditsVal = 20;
-        const semKey = `e${Math.floor(idx/2)+1}s${(idx%2)+1}`;
+        const semKey = semKeys[idx];
 
         if (branchSemesters && branchSemesters[semKey]) {
           creditsVal = branchSemesters[semKey].courses.reduce((sum, c) => sum + (c.isZeroCredit ? 0 : c.credits), 0);
