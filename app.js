@@ -475,6 +475,46 @@ const app = {
     this.setCgpaProgram(state.selectedProgram === 'puc' ? 'puc' : 'engineering');
   },
 
+  populateCgpaBranchDropdown(programType) {
+    const dropdown = document.getElementById('cgpa-branch-dropdown');
+    const wrapper = document.getElementById('cgpa-branch-select-wrapper');
+    if (!dropdown || !wrapper || !state.curriculumData) return;
+
+    if (programType === 'custom') {
+      wrapper.style.display = 'none';
+      return;
+    }
+
+    wrapper.style.display = 'block';
+    dropdown.innerHTML = '';
+
+    const branches = programType === 'puc' 
+      ? state.curriculumData.puc 
+      : state.curriculumData.engineering;
+
+    if (!branches) return;
+
+    // Set default selected branch if none is set
+    if (!state.cgpaSelectedBranch || !branches[state.cgpaSelectedBranch]) {
+      state.cgpaSelectedBranch = programType === 'puc' ? 'mpc' : 'aiml';
+    }
+
+    for (const [key, bObj] of Object.entries(branches)) {
+      const opt = document.createElement('option');
+      opt.value = key;
+      opt.textContent = bObj.name || key.toUpperCase();
+      if (key === state.cgpaSelectedBranch) {
+        opt.selected = true;
+      }
+      dropdown.appendChild(opt);
+    }
+  },
+
+  onCgpaBranchChange(branchKey) {
+    state.cgpaSelectedBranch = branchKey;
+    this.setCgpaProgram(state.cgpaProgram || 'engineering');
+  },
+
   setCgpaProgram(type) {
     state.cgpaProgram = type;
 
@@ -489,20 +529,21 @@ const app = {
       customBtn.className = type === 'custom' ? 'btn btn-primary' : 'btn btn-secondary';
     }
 
+    this.populateCgpaBranchDropdown(type);
+
     const container = document.getElementById('cgpa-rows-container');
     if (!container) return;
     container.innerHTML = '';
+
+    const activeBranchKey = state.cgpaSelectedBranch || (type === 'puc' ? 'mpc' : 'aiml');
 
     if (type === 'puc') {
       const semKeys = ['puc1_sem1', 'puc1_sem2', 'puc2_sem1', 'puc2_sem2'];
       const labels = ['PUC-I Sem-I', 'PUC-I Sem-II', 'PUC-II Sem-I', 'PUC-II Sem-II'];
       
-      let pucSemesters = null;
-      if (state.curriculumData && state.selectedBranch && state.curriculumData.puc && state.curriculumData.puc[state.selectedBranch]) {
-        pucSemesters = state.curriculumData.puc[state.selectedBranch].semesters;
-      } else if (state.curriculumData && state.curriculumData.puc) {
-        pucSemesters = state.curriculumData.puc['mpc'] ? state.curriculumData.puc['mpc'].semesters : null;
-      }
+      let pucSemesters = state.curriculumData && state.curriculumData.puc[activeBranchKey] 
+        ? state.curriculumData.puc[activeBranchKey].semesters 
+        : null;
 
       labels.forEach((lbl, idx) => {
         let creditsVal = 24;
@@ -516,8 +557,9 @@ const app = {
       const semKeys = ['e1s1', 'e1s2', 'e2s1', 'e2s2', 'e3s1', 'e3s2', 'e4s1', 'e4s2'];
       const labels = ['E1-S1', 'E1-S2', 'E2-S1', 'E2-S2', 'E3-S1', 'E3-S2', 'E4-S1', 'E4-S2'];
       
-      let branchKey = state.selectedBranch && state.curriculumData.engineering[state.selectedBranch] ? state.selectedBranch : 'aiml';
-      let branchSemesters = state.curriculumData ? state.curriculumData.engineering[branchKey].semesters : null;
+      let branchSemesters = state.curriculumData && state.curriculumData.engineering[activeBranchKey] 
+        ? state.curriculumData.engineering[activeBranchKey].semesters 
+        : null;
 
       labels.forEach((lbl, idx) => {
         let creditsVal = 20;

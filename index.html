@@ -381,7 +381,7 @@
       </p>
 
       <!-- Program Selection Tabs inside CGPA Modal -->
-      <div style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem; background: var(--bg-subtle); padding: 4px; border-radius: var(--radius-pill); border: 1px solid var(--border-color);">
+      <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; background: var(--bg-subtle); padding: 4px; border-radius: var(--radius-pill); border: 1px solid var(--border-color);">
         <button id="cgpa-tab-puc" class="btn btn-primary" style="flex:1; padding: 0.5rem 0.8rem; font-size: 0.85rem; border-radius: var(--radius-pill);" onclick="app.setCgpaProgram('puc')">
           <i class="fa-solid fa-graduation-cap"></i> PUC (4 Sems)
         </button>
@@ -391,6 +391,16 @@
         <button id="cgpa-tab-custom" class="btn btn-secondary" style="flex:1; padding: 0.5rem 0.8rem; font-size: 0.85rem; border-radius: var(--radius-pill);" onclick="app.setCgpaProgram('custom')">
           <i class="fa-solid fa-sliders"></i> Custom
         </button>
+      </div>
+
+      <!-- Branch Dropdown Selector inside CGPA Modal -->
+      <div id="cgpa-branch-select-wrapper" style="margin-bottom: 1.25rem;">
+        <label style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 0.35rem;">
+          <i class="fa-solid fa-building-columns"></i> Branch / Stream (Auto-fills exact semester credits):
+        </label>
+        <select id="cgpa-branch-dropdown" style="width: 100%; padding: 0.65rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-main); font-weight: 600; font-size: 0.9rem;" onchange="app.onCgpaBranchChange(this.value)">
+          <!-- Dynamically populated -->
+        </select>
       </div>
 
       <!-- Semester Rows Input Container -->
