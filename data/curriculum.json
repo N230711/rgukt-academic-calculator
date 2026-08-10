@@ -4,54 +4,63 @@
       "name": "MPC (Mathematics, Physics, Chemistry)",
       "semesters": {
         "puc1_sem1": {
-          "name": "PUC 1 Semester 1",
+          "name": "PUC-I Semester-I",
           "courses": [
-            { "code": "25MA1101", "name": "Mathematics-I", "credits": 4, "isZeroCredit": false },
-            { "code": "25PY1101", "name": "Physics-I", "credits": 4, "isZeroCredit": false },
-            { "code": "25CY1101", "name": "Chemistry-I", "credits": 4, "isZeroCredit": false },
-            { "code": "25EG1101", "name": "English-I", "credits": 3, "isZeroCredit": false },
-            { "code": "25TS1101", "name": "Telugu / Sanskrit-I", "credits": 3, "isZeroCredit": false },
-            { "code": "25CS1101", "name": "Information Technology-I", "credits": 2, "isZeroCredit": false },
-            { "code": "25PY1181", "name": "Physics Lab-I", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25CY1181", "name": "Chemistry Lab-I", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25CS1181", "name": "IT Lab-I", "credits": 1, "isZeroCredit": false }
+            { "code": "20PEG1101", "name": "English-I", "credits": 3, "isZeroCredit": false },
+            { "code": "20PMA1101", "name": "Mathematics-I", "credits": 5, "isZeroCredit": false },
+            { "code": "20PPY1101", "name": "Physics-I", "credits": 4, "isZeroCredit": false },
+            { "code": "20PPY1110", "name": "Physics Lab – I", "credits": 1, "isZeroCredit": false },
+            { "code": "20PCY1101", "name": "Chemistry – I", "credits": 4, "isZeroCredit": false },
+            { "code": "20PCY1110", "name": "Chemistry Lab – I", "credits": 1, "isZeroCredit": false },
+            { "code": "20PTE1101", "name": "Telugu – I", "credits": 3, "isZeroCredit": false },
+            { "code": "20PIT1101", "name": "Basics in Information Technology", "credits": 2, "isZeroCredit": false },
+            { "code": "20PIT1110", "name": "Fundamentals of Computer Lab", "credits": 1, "isZeroCredit": false }
           ]
         },
         "puc1_sem2": {
-          "name": "PUC 1 Semester 2",
+          "name": "PUC-I Semester-II",
           "courses": [
-            { "code": "25MA1201", "name": "Mathematics-II", "credits": 4, "isZeroCredit": false },
-            { "code": "25PY1201", "name": "Physics-II", "credits": 4, "isZeroCredit": false },
-            { "code": "25CY1201", "name": "Chemistry-II", "credits": 4, "isZeroCredit": false },
-            { "code": "25EG1201", "name": "English-II", "credits": 3, "isZeroCredit": false },
-            { "code": "25TS1201", "name": "Telugu / Sanskrit-II", "credits": 3, "isZeroCredit": false },
-            { "code": "25PY1281", "name": "Physics Lab-II", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25CY1281", "name": "Chemistry Lab-II", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25SS1201", "name": "Comprehensive Soft Skills", "credits": 0, "isZeroCredit": true }
+            { "code": "20PEG1201", "name": "English-II", "credits": 3, "isZeroCredit": false },
+            { "code": "20PMA1201", "name": "Mathematics-II", "credits": 5, "isZeroCredit": false },
+            { "code": "20PPY1201", "name": "Physics-II", "credits": 4, "isZeroCredit": false },
+            { "code": "20PPY1210", "name": "Physics Lab – II", "credits": 1, "isZeroCredit": false },
+            { "code": "20PCY1201", "name": "Chemistry – II", "credits": 4, "isZeroCredit": false },
+            { "code": "20PCY1210", "name": "Chemistry Lab – II", "credits": 1, "isZeroCredit": false },
+            { "code": "20PTE1201", "name": "Telugu – II", "credits": 3, "isZeroCredit": false },
+            { "code": "20PIT1201", "name": "Open office & LATEX", "credits": 2, "isZeroCredit": false },
+            { "code": "20PIT1210", "name": "Open office & LATEX Lab", "credits": 1, "isZeroCredit": false },
+            { "code": "20PBE1201", "name": "Biology-II", "credits": 0, "isZeroCredit": true },
+            { "code": "20PBE1210", "name": "Biology Lab-II", "credits": 0, "isZeroCredit": true }
           ]
         },
         "puc2_sem1": {
-          "name": "PUC 2 Semester 1",
+          "name": "PUC-II Semester-I",
           "courses": [
-            { "code": "25MA2101", "name": "Mathematics-III", "credits": 4, "isZeroCredit": false },
-            { "code": "25PY2101", "name": "Physics-III", "credits": 4, "isZeroCredit": false },
-            { "code": "25CY2101", "name": "Chemistry-III", "credits": 4, "isZeroCredit": false },
-            { "code": "25EG2101", "name": "English-III", "credits": 3, "isZeroCredit": false },
-            { "code": "25PY2181", "name": "Physics Lab-III", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25CY2181", "name": "Chemistry Lab-III", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25HS2101", "name": "Environmental & Health Studies", "credits": 0, "isZeroCredit": true }
+            { "code": "20PEG2101", "name": "English-III", "credits": 3, "isZeroCredit": false },
+            { "code": "20PMA2101", "name": "Mathematics-III", "credits": 5, "isZeroCredit": false },
+            { "code": "20PPY2101", "name": "Physics-III", "credits": 4, "isZeroCredit": false },
+            { "code": "20PPY2110", "name": "Physics Lab – III", "credits": 1, "isZeroCredit": false },
+            { "code": "20PCY2101", "name": "Chemistry – III", "credits": 4, "isZeroCredit": false },
+            { "code": "20PCY2110", "name": "Chemistry Lab – III", "credits": 1, "isZeroCredit": false },
+            { "code": "20PTE2101", "name": "Telugu – III", "credits": 3, "isZeroCredit": false },
+            { "code": "20PIT2101", "name": "Web designing with HTML, CSS, and Introduction to Programming", "credits": 2, "isZeroCredit": false },
+            { "code": "20PIT2110", "name": "Web designing using HTML and CSS Lab", "credits": 1, "isZeroCredit": false },
+            { "code": "20PB2101", "name": "Biology-III", "credits": 0, "isZeroCredit": true },
+            { "code": "20PBE2110", "name": "Biology Lab-III", "credits": 0, "isZeroCredit": true }
           ]
         },
         "puc2_sem2": {
-          "name": "PUC 2 Semester 2",
+          "name": "PUC-II Semester-II",
           "courses": [
-            { "code": "25MA2201", "name": "Mathematics-IV", "credits": 4, "isZeroCredit": false },
-            { "code": "25PY2201", "name": "Physics-IV", "credits": 4, "isZeroCredit": false },
-            { "code": "25CY2201", "name": "Chemistry-IV", "credits": 4, "isZeroCredit": false },
-            { "code": "25EG2201", "name": "English-IV", "credits": 3, "isZeroCredit": false },
-            { "code": "25PY2281", "name": "Physics Lab-IV", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25CY2281", "name": "Chemistry Lab-IV", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25PR2201", "name": "Grand Viva / Mini Project", "credits": 2, "isZeroCredit": false }
+            { "code": "20PEG2201", "name": "English-IV", "credits": 3, "isZeroCredit": false },
+            { "code": "20PMA2201", "name": "Mathematics-IV", "credits": 5, "isZeroCredit": false },
+            { "code": "20PPY2201", "name": "Physics-IV", "credits": 4, "isZeroCredit": false },
+            { "code": "20PPY2210", "name": "Physics Lab – IV", "credits": 1, "isZeroCredit": false },
+            { "code": "20PCY2201", "name": "Chemistry – IV", "credits": 4, "isZeroCredit": false },
+            { "code": "20PCY2210", "name": "Chemistry Lab – IV", "credits": 1, "isZeroCredit": false },
+            { "code": "20PTE2201", "name": "Telugu – IV", "credits": 3, "isZeroCredit": false },
+            { "code": "20PIT2201", "name": "Python Programming Language", "credits": 2, "isZeroCredit": false },
+            { "code": "20PIT2210", "name": "Python Programming Language Lab", "credits": 1, "isZeroCredit": false }
           ]
         }
       }
@@ -60,57 +69,67 @@
       "name": "MBiPC (Maths, Biology, Physics, Chemistry)",
       "semesters": {
         "puc1_sem1": {
-          "name": "PUC 1 Semester 1",
+          "name": "PUC-I Semester-I",
           "courses": [
-            { "code": "25MA1101", "name": "Mathematics-I", "credits": 3, "isZeroCredit": false },
-            { "code": "25BY1101", "name": "Biological Sciences-I (Botany & Zoology)", "credits": 4, "isZeroCredit": false },
-            { "code": "25PY1101", "name": "Physics-I", "credits": 3, "isZeroCredit": false },
-            { "code": "25CY1101", "name": "Chemistry-I", "credits": 3, "isZeroCredit": false },
-            { "code": "25EG1101", "name": "English-I", "credits": 3, "isZeroCredit": false },
-            { "code": "25BY1181", "name": "Biology Lab-I", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25PY1181", "name": "Physics Lab-I", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25CY1181", "name": "Chemistry Lab-I", "credits": 1.5, "isZeroCredit": false }
+            { "code": "20PEG1101", "name": "English-I", "credits": 3, "isZeroCredit": false },
+            { "code": "20PMA1101", "name": "Mathematics-I", "credits": 5, "isZeroCredit": false },
+            { "code": "20PPY1101", "name": "Physics-I", "credits": 4, "isZeroCredit": false },
+            { "code": "20PPY1110", "name": "Physics Lab – I", "credits": 1, "isZeroCredit": false },
+            { "code": "20PCY1101", "name": "Chemistry – I", "credits": 4, "isZeroCredit": false },
+            { "code": "20PCY1110", "name": "Chemistry Lab – I", "credits": 1, "isZeroCredit": false },
+            { "code": "20PTE1101", "name": "Telugu – I", "credits": 3, "isZeroCredit": false },
+            { "code": "20PIT1101", "name": "Basics in Information Technology", "credits": 2, "isZeroCredit": false },
+            { "code": "20PIT1110", "name": "Fundamentals of Computer Lab", "credits": 1, "isZeroCredit": false },
+            { "code": "20PBE1101", "name": "Biology-I", "credits": 3, "isZeroCredit": false },
+            { "code": "20PBE1110", "name": "Biology Lab-I", "credits": 1, "isZeroCredit": false }
           ]
         },
         "puc1_sem2": {
-          "name": "PUC 1 Semester 2",
+          "name": "PUC-I Semester-II",
           "courses": [
-            { "code": "25MA1201", "name": "Mathematics-II", "credits": 3, "isZeroCredit": false },
-            { "code": "25BY1201", "name": "Biological Sciences-II", "credits": 4, "isZeroCredit": false },
-            { "code": "25PY1201", "name": "Physics-II", "credits": 3, "isZeroCredit": false },
-            { "code": "25CY1201", "name": "Chemistry-II", "credits": 3, "isZeroCredit": false },
-            { "code": "25EG1201", "name": "English-II", "credits": 3, "isZeroCredit": false },
-            { "code": "25BY1281", "name": "Biology Lab-II", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25PY1281", "name": "Physics Lab-II", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25CY1281", "name": "Chemistry Lab-II", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25HS1201", "name": "Life Skills Education", "credits": 0, "isZeroCredit": true }
+            { "code": "20PEG1201", "name": "English-II", "credits": 3, "isZeroCredit": false },
+            { "code": "20PMA1201", "name": "Mathematics-II", "credits": 5, "isZeroCredit": false },
+            { "code": "20PPY1201", "name": "Physics-II", "credits": 4, "isZeroCredit": false },
+            { "code": "20PPY1210", "name": "Physics Lab – II", "credits": 1, "isZeroCredit": false },
+            { "code": "20PCY1201", "name": "Chemistry – II", "credits": 4, "isZeroCredit": false },
+            { "code": "20PCY1210", "name": "Chemistry Lab – II", "credits": 1, "isZeroCredit": false },
+            { "code": "20PTE1201", "name": "Telugu – II", "credits": 3, "isZeroCredit": false },
+            { "code": "20PIT1201", "name": "Open office & LATEX", "credits": 2, "isZeroCredit": false },
+            { "code": "20PIT1210", "name": "Open office & LATEX Lab", "credits": 1, "isZeroCredit": false },
+            { "code": "20PBE1201", "name": "Biology-II", "credits": 3, "isZeroCredit": false },
+            { "code": "20PBE1210", "name": "Biology Lab-II", "credits": 1, "isZeroCredit": false }
           ]
         },
         "puc2_sem1": {
-          "name": "PUC 2 Semester 1",
+          "name": "PUC-II Semester-I",
           "courses": [
-            { "code": "25MA2101", "name": "Mathematics-III", "credits": 3, "isZeroCredit": false },
-            { "code": "25BY2101", "name": "Biological Sciences-III", "credits": 4, "isZeroCredit": false },
-            { "code": "25PY2101", "name": "Physics-III", "credits": 3, "isZeroCredit": false },
-            { "code": "25CY2101", "name": "Chemistry-III", "credits": 3, "isZeroCredit": false },
-            { "code": "25EG2101", "name": "English-III", "credits": 3, "isZeroCredit": false },
-            { "code": "25BY2181", "name": "Biology Lab-III", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25PY2181", "name": "Physics Lab-III", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25CY2181", "name": "Chemistry Lab-III", "credits": 1.5, "isZeroCredit": false }
+            { "code": "20PEG2101", "name": "English-III", "credits": 3, "isZeroCredit": false },
+            { "code": "20PMA2101", "name": "Mathematics-III", "credits": 5, "isZeroCredit": false },
+            { "code": "20PPY2101", "name": "Physics-III", "credits": 4, "isZeroCredit": false },
+            { "code": "20PPY2110", "name": "Physics Lab – III", "credits": 1, "isZeroCredit": false },
+            { "code": "20PCY2101", "name": "Chemistry – III", "credits": 4, "isZeroCredit": false },
+            { "code": "20PCY2110", "name": "Chemistry Lab – III", "credits": 1, "isZeroCredit": false },
+            { "code": "20PTE2101", "name": "Telugu – III", "credits": 3, "isZeroCredit": false },
+            { "code": "20PIT2101", "name": "Web designing with HTML, CSS, and Introduction to Programming", "credits": 2, "isZeroCredit": false },
+            { "code": "20PIT2110", "name": "Web designing using HTML and CSS Lab", "credits": 1, "isZeroCredit": false },
+            { "code": "20PB2101", "name": "Biology-III", "credits": 3, "isZeroCredit": false },
+            { "code": "20PBE2110", "name": "Biology Lab-III", "credits": 1, "isZeroCredit": false }
           ]
         },
         "puc2_sem2": {
-          "name": "PUC 2 Semester 2",
+          "name": "PUC-II Semester-II",
           "courses": [
-            { "code": "25MA2201", "name": "Mathematics-IV", "credits": 3, "isZeroCredit": false },
-            { "code": "25BY2201", "name": "Biological Sciences-IV", "credits": 4, "isZeroCredit": false },
-            { "code": "25PY2201", "name": "Physics-IV", "credits": 3, "isZeroCredit": false },
-            { "code": "25CY2201", "name": "Chemistry-IV", "credits": 3, "isZeroCredit": false },
-            { "code": "25EG2201", "name": "English-IV", "credits": 3, "isZeroCredit": false },
-            { "code": "25BY2281", "name": "Biology Lab-IV", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25PY2281", "name": "Physics Lab-IV", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25CY2281", "name": "Chemistry Lab-IV", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25PR2201", "name": "Grand Viva / Practical Assessment", "credits": 2, "isZeroCredit": false }
+            { "code": "20PEG2201", "name": "English-IV", "credits": 3, "isZeroCredit": false },
+            { "code": "20PMA2201", "name": "Mathematics-IV", "credits": 5, "isZeroCredit": false },
+            { "code": "20PPY2201", "name": "Physics-IV", "credits": 4, "isZeroCredit": false },
+            { "code": "20PPY2210", "name": "Physics Lab – IV", "credits": 1, "isZeroCredit": false },
+            { "code": "20PCY2201", "name": "Chemistry – IV", "credits": 4, "isZeroCredit": false },
+            { "code": "20PCY2210", "name": "Chemistry Lab – IV", "credits": 1, "isZeroCredit": false },
+            { "code": "20PTE2201", "name": "Telugu – IV", "credits": 3, "isZeroCredit": false },
+            { "code": "20PIT2201", "name": "Python Programming Language", "credits": 2, "isZeroCredit": false },
+            { "code": "20PIT2210", "name": "Python Programming Language Lab", "credits": 1, "isZeroCredit": false },
+            { "code": "20PBE2201", "name": "Biology-IV", "credits": 3, "isZeroCredit": false },
+            { "code": "20PBE2210", "name": "Biology Lab-IV", "credits": 1, "isZeroCredit": false }
           ]
         }
       }
@@ -121,7 +140,7 @@
       "name": "Artificial Intelligence & Machine Learning (AI & ML)",
       "semesters": {
         "e1s1": {
-          "name": "E1 Sem 1",
+          "name": "E1-S1",
           "courses": [
             { "code": "25MA1102", "name": "Calculus & Linear Algebra", "credits": 4, "isZeroCredit": false },
             { "code": "25EE1109", "name": "Basic Electrical and Electronics Engineering", "credits": 3, "isZeroCredit": false },
@@ -135,7 +154,7 @@
           ]
         },
         "e1s2": {
-          "name": "E1 Sem 2",
+          "name": "E1-S2",
           "courses": [
             { "code": "25MA1202", "name": "Discrete Mathematics", "credits": 4, "isZeroCredit": false },
             { "code": "25AI1203", "name": "Digital Logic and Computer Organization", "credits": 4, "isZeroCredit": false },
@@ -149,7 +168,7 @@
           ]
         },
         "e2s1": {
-          "name": "E2 Sem 1",
+          "name": "E2-S1",
           "courses": [
             { "code": "25MA2106", "name": "Mathematical and Statistical Foundations", "credits": 4, "isZeroCredit": false },
             { "code": "25AI2104", "name": "Introduction to Data Science", "credits": 3, "isZeroCredit": false },
@@ -162,7 +181,7 @@
           ]
         },
         "e2s2": {
-          "name": "E2 Sem 2",
+          "name": "E2-S2",
           "courses": [
             { "code": "25AI2201", "name": "Web Technologies", "credits": 3, "isZeroCredit": false },
             { "code": "25AI2202", "name": "Operating Systems", "credits": 3, "isZeroCredit": false },
@@ -176,7 +195,7 @@
           ]
         },
         "e3s1": {
-          "name": "E3 Sem 1",
+          "name": "E3-S1",
           "courses": [
             { "code": "25AI3101", "name": "Natural Language Processing", "credits": 4, "isZeroCredit": false },
             { "code": "25AI3102", "name": "Software Engineering", "credits": 3, "isZeroCredit": false },
@@ -190,7 +209,7 @@
           ]
         },
         "e3s2": {
-          "name": "E3 Sem 2",
+          "name": "E3-S2",
           "courses": [
             { "code": "25AI3201", "name": "Introduction to Large Language Models", "credits": 4, "isZeroCredit": false },
             { "code": "25AI32XX", "name": "Professional Elective-II", "credits": 3, "isZeroCredit": false },
@@ -201,7 +220,7 @@
           ]
         },
         "e4s1": {
-          "name": "E4 Sem 1",
+          "name": "E4-S1",
           "courses": [
             { "code": "25AI41XX", "name": "Professional Elective-IV", "credits": 3, "isZeroCredit": false },
             { "code": "25AI41XX", "name": "Professional Elective-V", "credits": 3, "isZeroCredit": false },
@@ -210,7 +229,7 @@
           ]
         },
         "e4s2": {
-          "name": "E4 Sem 2",
+          "name": "E4-S2",
           "courses": [
             { "code": "25AI42XX", "name": "Open Elective-III", "credits": 3, "isZeroCredit": false },
             { "code": "25AI42XX", "name": "Open Elective-IV", "credits": 3, "isZeroCredit": false },
@@ -227,325 +246,322 @@
       }
     },
     "cse": {
-      "name": "Computer Science and Engineering (CSE)",
+      "name": "Computer Science & Engineering (CSE)",
       "semesters": {
         "e1s1": {
-          "name": "E1 Sem 1",
+          "name": "E1-S1",
           "courses": [
-            { "code": "25MA1102", "name": "Calculus & Linear Algebra", "credits": 4, "isZeroCredit": false },
-            { "code": "25EE1109", "name": "Basic Electrical Engineering", "credits": 3, "isZeroCredit": false },
-            { "code": "25CS1101", "name": "Programming for Problem Solving in C", "credits": 4, "isZeroCredit": false },
-            { "code": "25PY1108", "name": "Physics for Computer Engineers", "credits": 4, "isZeroCredit": false },
-            { "code": "25EG1181", "name": "English Communication Lab", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25PY1189", "name": "Engineering Physics Lab", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25CS1181", "name": "C Programming Lab", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25HS1101", "name": "Indian Constitution", "credits": 0, "isZeroCredit": true }
+            { "code": "20MA1102", "name": "Calculus & Linear Algebra", "credits": 4, "isZeroCredit": false },
+            { "code": "20EE1109", "name": "Basic Electrical and Electronics Engg.", "credits": 4, "isZeroCredit": false },
+            { "code": "20CS1101", "name": "Problem Solving and Programming Through C", "credits": 4, "isZeroCredit": false },
+            { "code": "20ME1114", "name": "Engineering Graphics & Computer Drafting", "credits": 2.5, "isZeroCredit": false },
+            { "code": "20EG1181", "name": "English-Language Communication Skills Lab-I", "credits": 2.5, "isZeroCredit": false },
+            { "code": "20EE1189", "name": "Basic Electrical and Electronics Engg. Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20CS1181", "name": "Problem Solving and Programming Through C Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20HS1101", "name": "Indian Constitution", "credits": 0, "isZeroCredit": true }
           ]
         },
         "e1s2": {
-          "name": "E1 Sem 2",
+          "name": "E1-S2",
           "courses": [
-            { "code": "25MA1202", "name": "Discrete Mathematics", "credits": 4, "isZeroCredit": false },
-            { "code": "25CS1202", "name": "Digital Logic Design", "credits": 4, "isZeroCredit": false },
-            { "code": "25CS1201", "name": "Object Oriented Programming Java", "credits": 4, "isZeroCredit": false },
-            { "code": "25CS1203", "name": "Data Structures", "credits": 4, "isZeroCredit": false },
-            { "code": "25ME1201", "name": "Engineering Workshop & Design Thinking", "credits": 1, "isZeroCredit": false },
-            { "code": "25CS1281", "name": "Java Programming Lab", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25CS1282", "name": "Data Structures Lab", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25BE1201", "name": "Environmental Science", "credits": 0, "isZeroCredit": true }
+            { "code": "20MA1202", "name": "Discrete Mathematics", "credits": 4, "isZeroCredit": false },
+            { "code": "20PY1201", "name": "Engineering Physics", "credits": 4, "isZeroCredit": false },
+            { "code": "20BM1201", "name": "Managerial Economics and Finance Analysis", "credits": 3, "isZeroCredit": false },
+            { "code": "20CS1201", "name": "Object Oriented Programming through Java", "credits": 4, "isZeroCredit": false },
+            { "code": "20CS1202", "name": "Data Structures", "credits": 3, "isZeroCredit": false },
+            { "code": "20PY1281", "name": "Engineering Physics Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20CS1281", "name": "Object Oriented Programming through Java Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20CS1282", "name": "Data Structures Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20BE1201", "name": "Environmental Science", "credits": 0, "isZeroCredit": true }
           ]
         },
         "e2s1": {
-          "name": "E2 Sem 1",
+          "name": "E2-S1",
           "courses": [
-            { "code": "25MA2106", "name": "Probability & Statistics", "credits": 4, "isZeroCredit": false },
-            { "code": "25CS2101", "name": "Design & Analysis of Algorithms", "credits": 4, "isZeroCredit": false },
-            { "code": "25CS2102", "name": "Database Management Systems", "credits": 3, "isZeroCredit": false },
-            { "code": "25CS2103", "name": "Theory of Computation", "credits": 4, "isZeroCredit": false },
-            { "code": "25CS2104", "name": "Computer Organization & Architecture", "credits": 3, "isZeroCredit": false },
-            { "code": "25CS2181", "name": "Algorithms Lab", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25CS2182", "name": "DBMS Lab", "credits": 1.5, "isZeroCredit": false }
+            { "code": "20MA2102", "name": "Probability and Statistics", "credits": 4, "isZeroCredit": false },
+            { "code": "20EC2110", "name": "Digital Logic Design", "credits": 3, "isZeroCredit": false },
+            { "code": "20CS2101", "name": "Design & Analysis of Algorithms", "credits": 4, "isZeroCredit": false },
+            { "code": "20CS2102", "name": "Database Management Systems", "credits": 3, "isZeroCredit": false },
+            { "code": "20CS2103", "name": "Formal Languages & Automata Theory", "credits": 3, "isZeroCredit": false },
+            { "code": "20CS2181", "name": "Design & Analysis of Algorithms Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20EC2180", "name": "Digital Logic Design Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20CS2182", "name": "Database Management Systems Lab", "credits": 1.5, "isZeroCredit": false }
           ]
         },
         "e2s2": {
-          "name": "E2 Sem 2",
+          "name": "E2-S2",
           "courses": [
-            { "code": "25CS2201", "name": "Web Technologies", "credits": 3, "isZeroCredit": false },
-            { "code": "25CS2202", "name": "Operating Systems", "credits": 3, "isZeroCredit": false },
-            { "code": "25CS2204", "name": "Computer Networks", "credits": 3, "isZeroCredit": false },
-            { "code": "25CS2205", "name": "Compiler Design", "credits": 4, "isZeroCredit": false },
-            { "code": "25CS2281", "name": "Operating Systems Lab", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25CS2282", "name": "Networks Lab", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25CS2283", "name": "Web Technologies Lab", "credits": 1.5, "isZeroCredit": false }
+            { "code": "20BM2202", "name": "Introduction to Operation Research", "credits": 3, "isZeroCredit": false },
+            { "code": "20CS2201", "name": "Computer Organization & Architecture", "credits": 3, "isZeroCredit": false },
+            { "code": "20CS2202", "name": "Data Science with Python", "credits": 3, "isZeroCredit": false },
+            { "code": "20CS2203", "name": "Web Technologies", "credits": 3, "isZeroCredit": false },
+            { "code": "20CS2204", "name": "Compiler Design", "credits": 3, "isZeroCredit": false },
+            { "code": "20CS2281", "name": "Computer Organization & Architecture Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20CS2282", "name": "Data Science with Python Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20CS2283", "name": "Web Technologies Lab", "credits": 1.5, "isZeroCredit": false }
           ]
         },
         "e3s1": {
-          "name": "E3 Sem 1",
+          "name": "E3-S1",
           "courses": [
-            { "code": "25CS3101", "name": "Software Engineering", "credits": 3, "isZeroCredit": false },
-            { "code": "25CS3102", "name": "Artificial Intelligence", "credits": 4, "isZeroCredit": false },
-            { "code": "25CS3103", "name": "Machine Learning", "credits": 4, "isZeroCredit": false },
-            { "code": "25CS31XX", "name": "Professional Elective-I", "credits": 3, "isZeroCredit": false },
-            { "code": "25CS3181", "name": "Software Engineering Lab", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25CS3191", "name": "Mini Project-I", "credits": 1.5, "isZeroCredit": false }
+            { "code": "20CS3101", "name": "Operating System", "credits": 3, "isZeroCredit": false },
+            { "code": "20CS3102", "name": "Computer Networks", "credits": 3, "isZeroCredit": false },
+            { "code": "20CS3103", "name": "Software Engineering", "credits": 3, "isZeroCredit": false },
+            { "code": "20CS3104", "name": "Mathematical Foundations for Data Science", "credits": 3, "isZeroCredit": false },
+            { "code": "20CS31XX", "name": "Elective – I", "credits": 3, "isZeroCredit": false },
+            { "code": "20CS3181", "name": "Operating System Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20CS3182", "name": "Computer Networks Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20CS3183", "name": "Software Engineering Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20EG3182", "name": "English-Language Communication Skills Lab-II", "credits": 1.5, "isZeroCredit": false }
           ]
         },
         "e3s2": {
-          "name": "E3 Sem 2",
+          "name": "E3-S2",
           "courses": [
-            { "code": "25CS3201", "name": "Cryptography & Network Security", "credits": 4, "isZeroCredit": false },
-            { "code": "25CS32XX", "name": "Professional Elective-II", "credits": 3, "isZeroCredit": false },
-            { "code": "25CS32XX", "name": "Professional Elective-III", "credits": 3, "isZeroCredit": false },
-            { "code": "25CS32XX", "name": "Open Elective-I", "credits": 3, "isZeroCredit": false },
-            { "code": "25CS3292", "name": "Mini Project-II", "credits": 3, "isZeroCredit": false }
+            { "code": "20CS3201", "name": "Cryptography and Networks Security", "credits": 4, "isZeroCredit": false },
+            { "code": "20CS3202", "name": "Artificial Intelligence", "credits": 4, "isZeroCredit": false },
+            { "code": "20CS32XX", "name": "Elective – II", "credits": 3, "isZeroCredit": false },
+            { "code": "20CS32XX", "name": "Elective – III", "credits": 3, "isZeroCredit": false },
+            { "code": "20XX32XX", "name": "Open Elective-I", "credits": 3, "isZeroCredit": false },
+            { "code": "EG3283", "name": "English-Language Communication Skills Lab-III", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20CS3291", "name": "Mini Project", "credits": 3, "isZeroCredit": false },
+            { "code": "20CS3203", "name": "Career Development Course", "credits": 0, "isZeroCredit": true },
+            { "code": "20CS3292", "name": "Summer Internship", "credits": 3, "isZeroCredit": false }
           ]
         },
         "e4s1": {
-          "name": "E4 Sem 1",
+          "name": "E4-S1",
           "courses": [
-            { "code": "25CS41XX", "name": "Professional Elective-IV", "credits": 3, "isZeroCredit": false },
-            { "code": "25CS41XX", "name": "Professional Elective-V", "credits": 3, "isZeroCredit": false },
-            { "code": "25CS41XX", "name": "Open Elective-II", "credits": 3, "isZeroCredit": false },
-            { "code": "25CS4194", "name": "Project-I", "credits": 6, "isZeroCredit": false }
+            { "code": "20CS4101", "name": "Machine Learning", "credits": 4, "isZeroCredit": false },
+            { "code": "20CS41XX", "name": "Elective-IV", "credits": 3, "isZeroCredit": false },
+            { "code": "20XX41XX", "name": "Open Elective – II", "credits": 3, "isZeroCredit": false },
+            { "code": "20CS4193", "name": "Project-I", "credits": 6, "isZeroCredit": false }
           ]
         },
         "e4s2": {
-          "name": "E4 Sem 2",
+          "name": "E4-S2",
           "courses": [
-            { "code": "25CS42XX", "name": "Open Elective-III", "credits": 3, "isZeroCredit": false },
-            { "code": "25CS4295", "name": "Project-II & Dissertation", "credits": 6, "isZeroCredit": false },
-            { "code": "25CS4299", "name": "Community Service", "credits": 2, "isZeroCredit": false }
-          ]
-        },
-        "summer": {
-          "name": "Summer Semester",
-          "courses": [
-            { "code": "25CS3293", "name": "Summer Internship", "credits": 3, "isZeroCredit": false }
+            { "code": "20CS42XX", "name": "Elective-V", "credits": 3, "isZeroCredit": false },
+            { "code": "20XX42XX", "name": "Open Elective-III", "credits": 3, "isZeroCredit": false },
+            { "code": "20CS42XX", "name": "Open Elective-IV", "credits": 3, "isZeroCredit": false },
+            { "code": "20CS4294", "name": "Project-II", "credits": 6, "isZeroCredit": false },
+            { "code": "20CS4299", "name": "Community Service", "credits": 2, "isZeroCredit": false }
           ]
         }
       }
     },
     "ece": {
-      "name": "Electronics and Communication Engineering (ECE)",
+      "name": "Electronics & Communication Engineering (ECE)",
       "semesters": {
         "e1s1": {
-          "name": "E1 Sem 1",
+          "name": "E1-S1",
           "courses": [
-            { "code": "25MA1102", "name": "Linear Algebra & Calculus", "credits": 4, "isZeroCredit": false },
-            { "code": "25EC1101", "name": "Network Analysis & Synthesis", "credits": 4, "isZeroCredit": false },
-            { "code": "25CS1101", "name": "Programming for Problem Solving in C", "credits": 4, "isZeroCredit": false },
-            { "code": "25PY1108", "name": "Applied Physics", "credits": 4, "isZeroCredit": false },
-            { "code": "25EC1181", "name": "Network Analysis Lab", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25HS1101", "name": "Indian Constitution", "credits": 0, "isZeroCredit": true }
+            { "code": "23MA1101", "name": "Differential Equations and Multivariable calculus", "credits": 4, "isZeroCredit": false },
+            { "code": "23PY1101", "name": "Engineering Physics", "credits": 4, "isZeroCredit": false },
+            { "code": "23PY1181", "name": "Engineering Physics Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "22CE1114", "name": "Engineering Graphics and Design", "credits": 2.5, "isZeroCredit": false },
+            { "code": "23EE1110", "name": "Electrical Technology", "credits": 4, "isZeroCredit": false },
+            { "code": "23EE1180", "name": "Electrical Technology Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "23EC1102", "name": "Introduction to Latest Technical Advancements", "credits": 1, "isZeroCredit": false },
+            { "code": "23CS1108", "name": "Programming & Data Structures", "credits": 3, "isZeroCredit": false },
+            { "code": "23CS1188", "name": "Programming & Data Structures Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "23BEXY02", "name": "Biology for Engineers", "credits": 0, "isZeroCredit": true }
           ]
         },
         "e1s2": {
-          "name": "E1 Sem 2",
+          "name": "E1-S2",
           "courses": [
-            { "code": "25MA1202", "name": "Differential Equations & Complex Variables", "credits": 4, "isZeroCredit": false },
-            { "code": "25EC1201", "name": "Electronic Devices & Circuits", "credits": 4, "isZeroCredit": false },
-            { "code": "25EC1202", "name": "Digital Logic Design", "credits": 4, "isZeroCredit": false },
-            { "code": "25EC1281", "name": "Electronic Devices Lab", "credits": 1.5, "isZeroCredit": false },
-            { "code": "25BE1201", "name": "Environmental Science", "credits": 0, "isZeroCredit": true }
+            { "code": "23MA1201", "name": "Mathematical Methods", "credits": 4, "isZeroCredit": false },
+            { "code": "23CS1209", "name": "Object Oriented Programming", "credits": 2, "isZeroCredit": false },
+            { "code": "23CS1289", "name": "Object Oriented Programming Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "23EC1285", "name": "Computational Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "23EG1281", "name": "English-Language Communication skills Lab-1", "credits": 2.5, "isZeroCredit": false },
+            { "code": "23EC1201", "name": "Electronic Devices and Circuits", "credits": 4, "isZeroCredit": false },
+            { "code": "23EC1281", "name": "Electronic Devices and Circuits Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "23EE1211", "name": "Network Theory", "credits": 4, "isZeroCredit": false },
+            { "code": "23EC1203", "name": "Signals and Systems", "credits": 4, "isZeroCredit": false }
           ]
         },
         "e2s1": {
-          "name": "E2 Sem 1",
+          "name": "E2-S1",
           "courses": [
-            { "code": "25EC2101", "name": "Analog Circuits", "credits": 4, "isZeroCredit": false },
-            { "code": "25EC2102", "name": "Signals and Systems", "credits": 4, "isZeroCredit": false },
-            { "code": "25EC2103", "name": "Electromagnetic Waves & Transmission Lines", "credits": 3, "isZeroCredit": false },
-            { "code": "25EC2181", "name": "Analog Circuits Lab", "credits": 1.5, "isZeroCredit": false }
+            { "code": "23MA2101", "name": "Probability & Random Variables", "credits": 3, "isZeroCredit": false },
+            { "code": "23EC2185", "name": "Internet of Things Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "23EC2101", "name": "Analog Electronic Circuits", "credits": 4, "isZeroCredit": false },
+            { "code": "23EC2181", "name": "Analog Electronic Circuits Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "23EC2102", "name": "Digital Logic Design", "credits": 4, "isZeroCredit": false },
+            { "code": "23EC2182", "name": "Digital Logic Design Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "23EC2103", "name": "Digital Signal Processing", "credits": 4, "isZeroCredit": false },
+            { "code": "23EC2183", "name": "Digital Signal Processing Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "23EE21XX", "name": "Control Systems", "credits": 3, "isZeroCredit": false }
           ]
         },
         "e2s2": {
-          "name": "E2 Sem 2",
+          "name": "E2-S2",
           "courses": [
-            { "code": "25EC2201", "name": "Analog & Digital Communications", "credits": 4, "isZeroCredit": false },
-            { "code": "25EC2202", "name": "Microprocessors & Microcontrollers", "credits": 4, "isZeroCredit": false },
-            { "code": "25EC2203", "name": "Control Systems", "credits": 3, "isZeroCredit": false },
-            { "code": "25EC2281", "name": "Communication Systems Lab", "credits": 1.5, "isZeroCredit": false }
+            { "code": "23EC2285", "name": "Robotics Laboratory", "credits": 2.5, "isZeroCredit": false },
+            { "code": "23EC2201", "name": "Communication Systems-1", "credits": 4, "isZeroCredit": false },
+            { "code": "23EC2281", "name": "Communication Systems-1 Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "23EC2202", "name": "Digital System Design", "credits": 3, "isZeroCredit": false },
+            { "code": "23EC2282", "name": "Digital System Design Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "23EC2203", "name": "Linear Integrated Circuits", "credits": 4, "isZeroCredit": false },
+            { "code": "23EC2283", "name": "Linear Integrated Circuits Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "23EC2204", "name": "Electromagnetic Waves & Guided Media", "credits": 4, "isZeroCredit": false },
+            { "code": "23EC2205", "name": "Foundations to Artificial Intelligence", "credits": 1, "isZeroCredit": false }
           ]
         },
         "e3s1": {
-          "name": "E3 Sem 1",
+          "name": "E3-S1",
           "courses": [
-            { "code": "25EC3101", "name": "Digital Signal Processing", "credits": 4, "isZeroCredit": false },
-            { "code": "25EC3102", "name": "VLSI Design", "credits": 4, "isZeroCredit": false },
-            { "code": "25EC31XX", "name": "Professional Elective-I", "credits": 3, "isZeroCredit": false },
-            { "code": "25EC3181", "name": "DSP & VLSI Lab", "credits": 1.5, "isZeroCredit": false }
+            { "code": "23EC3102", "name": "Computer Networks", "credits": 3, "isZeroCredit": false },
+            { "code": "23EC3103", "name": "Computer Organization & Design based on RISC V", "credits": 3, "isZeroCredit": false },
+            { "code": "23EG3182", "name": "English-Language Communication skills Lab-2", "credits": 1.5, "isZeroCredit": false },
+            { "code": "23EC3101", "name": "Communication Systems-2", "credits": 4, "isZeroCredit": false },
+            { "code": "23EC3181", "name": "Communication Systems-2 Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "23EC3182", "name": "Microprocessors Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "23EC3185", "name": "Radio Frequency & Microwave Engg. Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "23EC3190", "name": "Mini-Project-I (Socially Relevant Project)", "credits": 1, "isZeroCredit": false },
+            { "code": "23BM3181", "name": "Product Design & Innovation Lab", "credits": 1, "isZeroCredit": false },
+            { "code": "23EC3104", "name": "RF & Microwave Engineering", "credits": 2, "isZeroCredit": false }
           ]
         },
         "e3s2": {
-          "name": "E3 Sem 2",
+          "name": "E3-S2",
           "courses": [
-            { "code": "25EC3201", "name": "Antennas and Wave Propagation", "credits": 4, "isZeroCredit": false },
-            { "code": "25EC32XX", "name": "Professional Elective-II", "credits": 3, "isZeroCredit": false },
-            { "code": "25EC3292", "name": "Mini Project", "credits": 3, "isZeroCredit": false }
+            { "code": "23EG3283", "name": "English-Language Communication skills Lab-3", "credits": 1.5, "isZeroCredit": false },
+            { "code": "23HS3101", "name": "Indian Constitution", "credits": 0, "isZeroCredit": true },
+            { "code": "23EC32XX", "name": "Elective-1", "credits": 3, "isZeroCredit": false },
+            { "code": "23EC32XX", "name": "Elective-2", "credits": 3, "isZeroCredit": false },
+            { "code": "23XX32XX", "name": "Open Elective-1", "credits": 3, "isZeroCredit": false },
+            { "code": "23XX32XX", "name": "Open Elective-2", "credits": 3, "isZeroCredit": false },
+            { "code": "23EC3291", "name": "Mini Project-II", "credits": 1.5, "isZeroCredit": false },
+            { "code": "23HS3201", "name": "Career Development Course", "credits": 0, "isZeroCredit": true }
           ]
         },
         "e4s1": {
-          "name": "E4 Sem 1",
+          "name": "E4-S1",
           "courses": [
-            { "code": "25EC41XX", "name": "Professional Elective-III", "credits": 3, "isZeroCredit": false },
-            { "code": "25EC4194", "name": "Project Phase-I", "credits": 6, "isZeroCredit": false }
+            { "code": "23EC41XX", "name": "Elective-3", "credits": 3, "isZeroCredit": false },
+            { "code": "23EC41XX", "name": "Elective-4", "credits": 3, "isZeroCredit": false },
+            { "code": "23XX41XX", "name": "Open Elective-3", "credits": 3, "isZeroCredit": false },
+            { "code": "23EC4192", "name": "Summer Internship Project", "credits": 3, "isZeroCredit": false },
+            { "code": "23EC4193", "name": "Project I", "credits": 4, "isZeroCredit": false },
+            { "code": "23BE4101", "name": "Environmental Science", "credits": 0, "isZeroCredit": true }
           ]
         },
         "e4s2": {
-          "name": "E4 Sem 2",
+          "name": "E4-S2",
           "courses": [
-            { "code": "25EC4295", "name": "Project Phase-II & Seminar", "credits": 6, "isZeroCredit": false },
-            { "code": "25EC4299", "name": "Community Service Project", "credits": 2, "isZeroCredit": false }
-          ]
-        },
-        "summer": {
-          "name": "Summer Semester",
-          "courses": [
-            { "code": "25EC3293", "name": "Industrial Internship", "credits": 3, "isZeroCredit": false }
+            { "code": "23HS4299", "name": "Community Service", "credits": 2, "isZeroCredit": false },
+            { "code": "23EC42XX", "name": "Elective-5", "credits": 3, "isZeroCredit": false },
+            { "code": "23XX42XX", "name": "Open Elective-4", "credits": 3, "isZeroCredit": false },
+            { "code": "23EC4294", "name": "Project-II & Dissertation", "credits": 6, "isZeroCredit": false }
           ]
         }
       }
     },
     "eee": {
-      "name": "Electrical and Electronics Engineering (EEE)",
+      "name": "Electrical & Electronics Engineering (EEE)",
       "semesters": {
         "e1s1": {
-          "name": "E1 Sem 1",
+          "name": "E1-S1",
           "courses": [
-            { "code": "25MA1102", "name": "Calculus & Linear Algebra", "credits": 4, "isZeroCredit": false },
-            { "code": "25EE1101", "name": "Electric Circuit Analysis", "credits": 4, "isZeroCredit": false },
-            { "code": "25CS1101", "name": "C Programming", "credits": 4, "isZeroCredit": false },
-            { "code": "25HS1101", "name": "Indian Constitution", "credits": 0, "isZeroCredit": true }
+            { "code": "20MA1101", "name": "Engineering Mathematics-I", "credits": 4, "isZeroCredit": false },
+            { "code": "20PY1104", "name": "Engineering Physics", "credits": 4, "isZeroCredit": false },
+            { "code": "20PY1184", "name": "Engineering Physics Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20EE1101", "name": "Fundamentals of Electrical Engineering", "credits": 4, "isZeroCredit": false },
+            { "code": "20EE1102", "name": "Fundamentals of Electrical Engineering Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20CS1109", "name": "Programming and Data Structures", "credits": 4, "isZeroCredit": false },
+            { "code": "20CS1189", "name": "Programming and Data Structures Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "Human Values", "name": "Human Values", "credits": 0, "isZeroCredit": true }
           ]
         },
         "e1s2": {
-          "name": "E1 Sem 2",
+          "name": "E1-S2",
           "courses": [
-            { "code": "25MA1202", "name": "Differential Equations", "credits": 4, "isZeroCredit": false },
-            { "code": "25EE1201", "name": "Electrical Machines-I", "credits": 4, "isZeroCredit": false },
-            { "code": "25EC1201", "name": "Analog Electronics", "credits": 3, "isZeroCredit": false },
-            { "code": "25BE1201", "name": "Environmental Science", "credits": 0, "isZeroCredit": true }
+            { "code": "20EE1201", "name": "Electromagnetic Fields", "credits": 3, "isZeroCredit": false },
+            { "code": "20MA1201", "name": "Engineering Mathematics-II", "credits": 4, "isZeroCredit": false },
+            { "code": "20EC1201", "name": "Basic Electronics", "credits": 4, "isZeroCredit": false },
+            { "code": "20EC1281", "name": "Basic Electronics Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20EE1202", "name": "Electrical Machines-I", "credits": 4, "isZeroCredit": false },
+            { "code": "20EE1203", "name": "Electrical Machines-I Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20EG1282", "name": "English Language Laboratory", "credits": 2.5, "isZeroCredit": false },
+            { "code": "20CE1114", "name": "Engineering Graphics", "credits": 2, "isZeroCredit": false },
+            { "code": "20MC3101", "name": "Constitution of India", "credits": 0, "isZeroCredit": true }
           ]
         },
         "e2s1": {
-          "name": "E2 Sem 1",
+          "name": "E2-S1",
           "courses": [
-            { "code": "25EE2101", "name": "Electrical Machines-II", "credits": 4, "isZeroCredit": false },
-            { "code": "25EE2102", "name": "Power Systems-I", "credits": 4, "isZeroCredit": false },
-            { "code": "25EE2103", "name": "Electromagnetic Fields", "credits": 3, "isZeroCredit": false }
+            { "code": "20EE2101", "name": "Network Analysis", "credits": 4, "isZeroCredit": false },
+            { "code": "20EE2102", "name": "Network Analysis Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20EC2101", "name": "Analog Electronic Circuits", "credits": 4, "isZeroCredit": false },
+            { "code": "20EC2181", "name": "Analog Electronic Circuits laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20MA2101", "name": "Mathematics-III (Probability and Random processes)", "credits": 4, "isZeroCredit": false },
+            { "code": "20EE2103", "name": "Power Systems-I", "credits": 4, "isZeroCredit": false },
+            { "code": "20CS1209", "name": "Object Oriented Programming", "credits": 4, "isZeroCredit": false },
+            { "code": "Professional Ethics", "name": "Professional Ethics", "credits": 0, "isZeroCredit": true }
           ]
         },
         "e2s2": {
-          "name": "E2 Sem 2",
+          "name": "E2-S2",
           "courses": [
-            { "code": "25EE2201", "name": "Power Electronics", "credits": 4, "isZeroCredit": false },
-            { "code": "25EE2202", "name": "Control Systems", "credits": 4, "isZeroCredit": false },
-            { "code": "25EE2203", "name": "Power Systems-II", "credits": 4, "isZeroCredit": false }
+            { "code": "20EE2201", "name": "Electrical Machines-II", "credits": 4, "isZeroCredit": false },
+            { "code": "20EE2202", "name": "Electrical Machine-II Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20EE2203", "name": "Power Systems-II", "credits": 4, "isZeroCredit": false },
+            { "code": "20EC1203", "name": "Signals and Systems", "credits": 4, "isZeroCredit": false },
+            { "code": "20EC2205", "name": "Digital Logic Design", "credits": 4, "isZeroCredit": false },
+            { "code": "20EC2182", "name": "Digital Logic Design Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20BE4101", "name": "Environment Sciences", "credits": 0, "isZeroCredit": true }
           ]
         },
         "e3s1": {
-          "name": "E3 Sem 1",
+          "name": "E3-S1",
           "courses": [
-            { "code": "25EE3101", "name": "Renewable Energy Sources", "credits": 3, "isZeroCredit": false },
-            { "code": "25EE3102", "name": "Microcontrollers & Applications", "credits": 4, "isZeroCredit": false },
-            { "code": "25EE31XX", "name": "Professional Elective-I", "credits": 3, "isZeroCredit": false }
+            { "code": "20EC2103", "name": "Digital Signal Processing", "credits": 4, "isZeroCredit": false },
+            { "code": "20EC2203", "name": "Linear Integrated Circuits", "credits": 4, "isZeroCredit": false },
+            { "code": "20EC2283", "name": "Linear Integrated Circuits Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20EE3105", "name": "Internet of things Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20EE3101", "name": "Power Electronics", "credits": 4, "isZeroCredit": false },
+            { "code": "20EE3102", "name": "Power Electronics Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20EE3103", "name": "Control systems", "credits": 4, "isZeroCredit": false },
+            { "code": "20EE3104", "name": "Control systems Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20EE3191", "name": "Mini-Project-I (Socially Relevant Project)", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20HS3101", "name": "Aptitude and Reasoning", "credits": 0, "isZeroCredit": true },
+            { "code": "20HS3106", "name": "Placement Skills", "credits": 0, "isZeroCredit": true }
           ]
         },
         "e3s2": {
-          "name": "E3 Sem 2",
+          "name": "E3-S2",
           "courses": [
-            { "code": "25EE3201", "name": "Electric Drives", "credits": 4, "isZeroCredit": false },
-            { "code": "25EE32XX", "name": "Professional Elective-II", "credits": 3, "isZeroCredit": false },
-            { "code": "25EE3292", "name": "Mini Project", "credits": 3, "isZeroCredit": false }
+            { "code": "20EE3206", "name": "Power System Operation and Control(PSOC)", "credits": 4, "isZeroCredit": false },
+            { "code": "BMXY01", "name": "Product Design & Innovation", "credits": 1, "isZeroCredit": false },
+            { "code": "EE32XX", "name": "Elective-1", "credits": 3, "isZeroCredit": false },
+            { "code": "EE32XX", "name": "Elective-2", "credits": 3, "isZeroCredit": false },
+            { "code": "XX32XX", "name": "Open Elective-1", "credits": 3, "isZeroCredit": false },
+            { "code": "XX32XX", "name": "Open Elective-2", "credits": 3, "isZeroCredit": false },
+            { "code": "20EE3292", "name": "Mini Project-II", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20EE3210", "name": "Summer Internship (After VI semester)", "credits": 3, "isZeroCredit": false },
+            { "code": "20MC3201", "name": "Career Development Course", "credits": 0, "isZeroCredit": true }
           ]
         },
         "e4s1": {
-          "name": "E4 Sem 1",
+          "name": "E4-S1",
           "courses": [
-            { "code": "25EE41XX", "name": "Professional Elective-III", "credits": 3, "isZeroCredit": false },
-            { "code": "25EE4194", "name": "Project Phase-I", "credits": 6, "isZeroCredit": false }
+            { "code": "20EE41XX", "name": "Elective-3", "credits": 3, "isZeroCredit": false },
+            { "code": "20EE41XX", "name": "Elective-4", "credits": 3, "isZeroCredit": false },
+            { "code": "20XX41XX", "name": "Open Elective-3", "credits": 3, "isZeroCredit": false },
+            { "code": "20EE4193", "name": "Project I", "credits": 4, "isZeroCredit": false }
           ]
         },
         "e4s2": {
-          "name": "E4 Sem 2",
+          "name": "E4-S2",
           "courses": [
-            { "code": "25EE4295", "name": "Project Phase-II & Dissertation", "credits": 6, "isZeroCredit": false },
-            { "code": "25EE4299", "name": "Community Service", "credits": 2, "isZeroCredit": false }
-          ]
-        },
-        "summer": {
-          "name": "Summer Semester",
-          "courses": [
-            { "code": "25EE3293", "name": "Summer Internship", "credits": 3, "isZeroCredit": false }
-          ]
-        }
-      }
-    },
-    "civil": {
-      "name": "Civil Engineering",
-      "semesters": {
-        "e1s1": {
-          "name": "E1 Sem 1",
-          "courses": [
-            { "code": "25MA1102", "name": "Calculus & Linear Algebra", "credits": 4, "isZeroCredit": false },
-            { "code": "25CE1101", "name": "Engineering Mechanics", "credits": 4, "isZeroCredit": false },
-            { "code": "25PY1108", "name": "Engineering Physics", "credits": 4, "isZeroCredit": false },
-            { "code": "25HS1101", "name": "Indian Constitution", "credits": 0, "isZeroCredit": true }
-          ]
-        },
-        "e1s2": {
-          "name": "E1 Sem 2",
-          "courses": [
-            { "code": "25CE1201", "name": "Strength of Materials", "credits": 4, "isZeroCredit": false },
-            { "code": "25CE1202", "name": "Surveying and Geomatics", "credits": 4, "isZeroCredit": false },
-            { "code": "25BE1201", "name": "Environmental Science", "credits": 0, "isZeroCredit": true }
-          ]
-        },
-        "e2s1": {
-          "name": "E2 Sem 1",
-          "courses": [
-            { "code": "25CE2101", "name": "Fluid Mechanics", "credits": 4, "isZeroCredit": false },
-            { "code": "25CE2102", "name": "Structural Analysis-I", "credits": 4, "isZeroCredit": false }
-          ]
-        },
-        "e2s2": {
-          "name": "E2 Sem 2",
-          "courses": [
-            { "code": "25CE2201", "name": "Hydraulics & Hydraulic Machines", "credits": 4, "isZeroCredit": false },
-            { "code": "25CE2202", "name": "Geotechnical Engineering", "credits": 4, "isZeroCredit": false }
-          ]
-        },
-        "e3s1": {
-          "name": "E3 Sem 1",
-          "courses": [
-            { "code": "25CE3101", "name": "Design of Reinforced Concrete Structures", "credits": 4, "isZeroCredit": false },
-            { "code": "25CE3102", "name": "Transportation Engineering", "credits": 4, "isZeroCredit": false }
-          ]
-        },
-        "e3s2": {
-          "name": "E3 Sem 2",
-          "courses": [
-            { "code": "25CE3201", "name": "Design of Steel Structures", "credits": 4, "isZeroCredit": false },
-            { "code": "25CE3292", "name": "Mini Project", "credits": 3, "isZeroCredit": false }
-          ]
-        },
-        "e4s1": {
-          "name": "E4 Sem 1",
-          "courses": [
-            { "code": "25CE4194", "name": "Project Phase-I", "credits": 6, "isZeroCredit": false }
-          ]
-        },
-        "e4s2": {
-          "name": "E4 Sem 2",
-          "courses": [
-            { "code": "25CE4295", "name": "Project Phase-II & Viva", "credits": 6, "isZeroCredit": false },
-            { "code": "25CE4299", "name": "Community Service", "credits": 2, "isZeroCredit": false }
-          ]
-        },
-        "summer": {
-          "name": "Summer Semester",
-          "courses": [
-            { "code": "25CE3293", "name": "Summer Internship", "credits": 3, "isZeroCredit": false }
+            { "code": "20HS4299", "name": "Community Service", "credits": 2, "isZeroCredit": false },
+            { "code": "20HS42XX", "name": "Open Elective-4", "credits": 3, "isZeroCredit": false },
+            { "code": "20EE42XX", "name": "Elective-5", "credits": 3, "isZeroCredit": false },
+            { "code": "20XX42XX", "name": "Open Elective-5", "credits": 3, "isZeroCredit": false },
+            { "code": "20EE4294", "name": "Project-II & Dissertation", "credits": 6, "isZeroCredit": false }
           ]
         }
       }
@@ -554,67 +570,99 @@
       "name": "Mechanical Engineering",
       "semesters": {
         "e1s1": {
-          "name": "E1 Sem 1",
+          "name": "E1-S1",
           "courses": [
-            { "code": "25MA1102", "name": "Calculus & Linear Algebra", "credits": 4, "isZeroCredit": false },
-            { "code": "25ME1101", "name": "Engineering Mechanics", "credits": 4, "isZeroCredit": false },
-            { "code": "25CY1108", "name": "Engineering Chemistry", "credits": 4, "isZeroCredit": false },
-            { "code": "25HS1101", "name": "Indian Constitution", "credits": 0, "isZeroCredit": true }
+            { "code": "MA1101", "name": "Differential Equations and Multivariable Calculus", "credits": 4, "isZeroCredit": false },
+            { "code": "EG1181", "name": "English Language Proficiency Lab", "credits": 2.5, "isZeroCredit": false },
+            { "code": "PY1102", "name": "Engineering Physics", "credits": 4, "isZeroCredit": false },
+            { "code": "EC1109", "name": "Basic Electrical and Electronics Engineering", "credits": 4, "isZeroCredit": false },
+            { "code": "CY1103", "name": "Engineering Chemistry", "credits": 3, "isZeroCredit": false },
+            { "code": "ME1181", "name": "Workshop Practice", "credits": 1.5, "isZeroCredit": false },
+            { "code": "EC1189", "name": "Basic Electrical & Electronics Engineering Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "BS1183", "name": "Engineering Physics & Chemistry Laboratory", "credits": 1.5, "isZeroCredit": false }
           ]
         },
         "e1s2": {
-          "name": "E1 Sem 2",
+          "name": "E1-S2",
           "courses": [
-            { "code": "25ME1201", "name": "Thermodynamics", "credits": 4, "isZeroCredit": false },
-            { "code": "25ME1202", "name": "Materials Engineering", "credits": 3, "isZeroCredit": false },
-            { "code": "25BE1201", "name": "Environmental Science", "credits": 0, "isZeroCredit": true }
+            { "code": "MA1201", "name": "Mathematical Methods", "credits": 4, "isZeroCredit": false },
+            { "code": "ME1213", "name": "Engineering Mechanics", "credits": 4, "isZeroCredit": false },
+            { "code": "ME1201", "name": "Material Science & Metallurgy", "credits": 3, "isZeroCredit": false },
+            { "code": "CS1209", "name": "Programming and Data Structures", "credits": 3, "isZeroCredit": false },
+            { "code": "ME1214", "name": "Engineering Graphics and Computer Drafting", "credits": 2.5, "isZeroCredit": false },
+            { "code": "CS1289", "name": "Programming and Data Structures Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "ME1281", "name": "Material Science and Metallurgy Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "BE1201", "name": "Environmental Studies", "credits": 0, "isZeroCredit": true }
           ]
         },
         "e2s1": {
-          "name": "E2 Sem 1",
+          "name": "E2-S1",
           "courses": [
-            { "code": "25ME2101", "name": "Fluid Mechanics & Hydraulic Machines", "credits": 4, "isZeroCredit": false },
-            { "code": "25ME2102", "name": "Manufacturing Processes", "credits": 4, "isZeroCredit": false }
+            { "code": "MA2103", "name": "Transform Calculus", "credits": 4, "isZeroCredit": false },
+            { "code": "ME2101", "name": "Kinematics of Machinery", "credits": 4, "isZeroCredit": false },
+            { "code": "ME2102", "name": "Thermodynamics", "credits": 4, "isZeroCredit": false },
+            { "code": "ME2103", "name": "Mechanics of Solids", "credits": 4, "isZeroCredit": false },
+            { "code": "ME2104", "name": "Manufacturing Processes", "credits": 3, "isZeroCredit": false },
+            { "code": "ME2181", "name": "Mechanics of Solids Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "ME2105", "name": "Computer Aided Machine Drawing", "credits": 1.5, "isZeroCredit": false }
           ]
         },
         "e2s2": {
-          "name": "E2 Sem 2",
+          "name": "E2-S2",
           "courses": [
-            { "code": "25ME2201", "name": "Kinematics of Machinery", "credits": 4, "isZeroCredit": false },
-            { "code": "25ME2202", "name": "Applied Thermodynamics", "credits": 4, "isZeroCredit": false }
+            { "code": "ME2201", "name": "Design of Machine Elements", "credits": 4, "isZeroCredit": false },
+            { "code": "ME2202", "name": "Dynamics of Machinery", "credits": 4, "isZeroCredit": false },
+            { "code": "ME2203", "name": "Fluid Mechanics & Hydraulic Machinery", "credits": 4, "isZeroCredit": false },
+            { "code": "ME2204", "name": "Metal Cutting and Machine Tools", "credits": 4, "isZeroCredit": false },
+            { "code": "MA2201", "name": "Introduction to Probability and Statistics", "credits": 3, "isZeroCredit": false },
+            { "code": "ME2281", "name": "Metal cutting and Machine Tools Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "ME2282", "name": "Fluid Mechanics & Hydraulic Machinery Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "HS2201", "name": "Indian Constitution", "credits": 0, "isZeroCredit": true }
           ]
         },
         "e3s1": {
-          "name": "E3 Sem 1",
+          "name": "E3-S1",
           "courses": [
-            { "code": "25ME3101", "name": "Design of Machine Elements", "credits": 4, "isZeroCredit": false },
-            { "code": "25ME3102", "name": "Heat Transfer", "credits": 4, "isZeroCredit": false }
+            { "code": "ME3101", "name": "Heat Transfer", "credits": 4, "isZeroCredit": false },
+            { "code": "ME3102", "name": "Design of Transmission Elements", "credits": 4, "isZeroCredit": false },
+            { "code": "ME3103", "name": "Applied Thermodynamics", "credits": 4, "isZeroCredit": false },
+            { "code": "ME3104", "name": "Metrology and Mechanical Measurements", "credits": 3, "isZeroCredit": false },
+            { "code": "ME3181", "name": "Metrology and Mechanical Measurements Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "ME3182", "name": "Heat Transfer Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "ME3183", "name": "Applied Thermodynamics Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "EG3183", "name": "Employability Skills Laboratory", "credits": 1.5, "isZeroCredit": false }
           ]
         },
         "e3s2": {
-          "name": "E3 Sem 2",
+          "name": "E3-S2",
           "courses": [
-            { "code": "25ME3201", "name": "Dynamics of Machinery", "credits": 4, "isZeroCredit": false },
-            { "code": "25ME3292", "name": "Mini Project", "credits": 3, "isZeroCredit": false }
+            { "code": "ME3201", "name": "Operations Research", "credits": 4, "isZeroCredit": false },
+            { "code": "ME3202", "name": "Finite Element Method", "credits": 4, "isZeroCredit": false },
+            { "code": "BM3201", "name": "Managerial Economics and Financial Accountancy", "credits": 3, "isZeroCredit": false },
+            { "code": "ME32XX", "name": "Program Elective Course-1", "credits": 3, "isZeroCredit": false },
+            { "code": "ME32XX", "name": "Program Elective Course-2", "credits": 3, "isZeroCredit": false },
+            { "code": "ME3281", "name": "Computer Aided Modeling and Simulation Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "EG3284", "name": "Communicative Competence Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "ME3291", "name": "Summer Internship", "credits": 3, "isZeroCredit": false }
           ]
         },
         "e4s1": {
-          "name": "E4 Sem 1",
+          "name": "E4-S1",
           "courses": [
-            { "code": "25ME4194", "name": "Project Phase-I", "credits": 6, "isZeroCredit": false }
+            { "code": "ME41XX", "name": "Program Elective Course-3", "credits": 3, "isZeroCredit": false },
+            { "code": "ME41XX", "name": "Open Elective Course-1", "credits": 3, "isZeroCredit": false },
+            { "code": "ME41XX", "name": "Open Elective Course-2", "credits": 3, "isZeroCredit": false },
+            { "code": "ME4192", "name": "Project", "credits": 4.5, "isZeroCredit": false }
           ]
         },
         "e4s2": {
-          "name": "E4 Sem 2",
+          "name": "E4-S2",
           "courses": [
-            { "code": "25ME4295", "name": "Project Phase-II & Viva", "credits": 6, "isZeroCredit": false },
-            { "code": "25ME4299", "name": "Community Service", "credits": 2, "isZeroCredit": false }
-          ]
-        },
-        "summer": {
-          "name": "Summer Semester",
-          "courses": [
-            { "code": "25ME3293", "name": "Summer Internship", "credits": 3, "isZeroCredit": false }
+            { "code": "ME42XX", "name": "Program Elective Course-4", "credits": 3, "isZeroCredit": false },
+            { "code": "ME42XX", "name": "Open Elective Course-3", "credits": 3, "isZeroCredit": false },
+            { "code": "ME42XX", "name": "Open Elective Course-4", "credits": 3, "isZeroCredit": false },
+            { "code": "ME42XX", "name": "Community Service", "credits": 2, "isZeroCredit": false },
+            { "code": "ME4293", "name": "Project", "credits": 6, "isZeroCredit": false }
           ]
         }
       }
@@ -623,61 +671,102 @@
       "name": "Chemical Engineering",
       "semesters": {
         "e1s1": {
-          "name": "E1 Sem 1",
+          "name": "E1-S1",
           "courses": [
-            { "code": "25MA1102", "name": "Mathematics-I", "credits": 4, "isZeroCredit": false },
-            { "code": "25CH1101", "name": "Introduction to Chemical Engineering", "credits": 3, "isZeroCredit": false },
-            { "code": "25HS1101", "name": "Indian Constitution", "credits": 0, "isZeroCredit": true }
+            { "code": "BE1101", "name": "Engineering Biology", "credits": 3, "isZeroCredit": false },
+            { "code": "CY1104", "name": "Engineering Chemistry", "credits": 3, "isZeroCredit": false },
+            { "code": "MA1101", "name": "Engineering Mathematics-I", "credits": 4, "isZeroCredit": false },
+            { "code": "CH1101", "name": "Introduction of Chemical Engineering", "credits": 2, "isZeroCredit": false },
+            { "code": "ME1111", "name": "Engineering and Solid Mechanics", "credits": 3, "isZeroCredit": false },
+            { "code": "EG1182", "name": "English Language Proficiency Lab-1", "credits": 2.5, "isZeroCredit": false },
+            { "code": "CY1181", "name": "Engineering Chemistry Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "ME1185", "name": "Workshop Lab", "credits": 1.5, "isZeroCredit": false }
           ]
         },
         "e1s2": {
-          "name": "E1 Sem 2",
+          "name": "E1-S2",
           "courses": [
-            { "code": "25CH1201", "name": "Chemical Process Calculations", "credits": 4, "isZeroCredit": false },
-            { "code": "25BE1201", "name": "Environmental Science", "credits": 0, "isZeroCredit": true }
+            { "code": "PY1203", "name": "Engineering Physics", "credits": 3, "isZeroCredit": false },
+            { "code": "MA1201", "name": "Engineering Mathematics –II", "credits": 4, "isZeroCredit": false },
+            { "code": "CE1201", "name": "Engineering Graphics and Design (Lab)", "credits": 2.5, "isZeroCredit": false },
+            { "code": "CS1209", "name": "Programming and Data Structures", "credits": 3, "isZeroCredit": false },
+            { "code": "CH1201", "name": "Chemical Process Calculations", "credits": 3, "isZeroCredit": false },
+            { "code": "CH1202", "name": "Fluid Mechanics", "credits": 4, "isZeroCredit": false },
+            { "code": "CS1289", "name": "Programming and Data Structures Lab", "credits": 1.5, "isZeroCredit": false }
           ]
         },
         "e2s1": {
-          "name": "E2 Sem 1",
+          "name": "E2-S1",
           "courses": [
-            { "code": "25CH2101", "name": "Fluid Mechanics for Chemical Engineers", "credits": 4, "isZeroCredit": false }
+            { "code": "MA2103", "name": "Transform Calculus", "credits": 4, "isZeroCredit": false },
+            { "code": "ME2112", "name": "Mechanical Technology", "credits": 3, "isZeroCredit": false },
+            { "code": "CH2101", "name": "Thermodynamics-I", "credits": 3, "isZeroCredit": false },
+            { "code": "CH2102", "name": "Heat Transfer", "credits": 4, "isZeroCredit": false },
+            { "code": "CH2103", "name": "Mechanical Unit Operations", "credits": 3, "isZeroCredit": false },
+            { "code": "BM2101", "name": "Managerial Economics and Financial Analysis", "credits": 3, "isZeroCredit": false },
+            { "code": "CH2181", "name": "Fluid Mechanics Lab", "credits": 1.5, "isZeroCredit": false }
           ]
         },
         "e2s2": {
-          "name": "E2 Sem 2",
+          "name": "E2-S2",
           "courses": [
-            { "code": "25CH2201", "name": "Heat Transfer Operations", "credits": 4, "isZeroCredit": false }
+            { "code": "EC2209", "name": "Basics of Electrical and Electronics Engineering", "credits": 3, "isZeroCredit": false },
+            { "code": "CS2209", "name": "Object Oriented programming through JAVA (JAVA or C++)", "credits": 3, "isZeroCredit": false },
+            { "code": "CH2201", "name": "Chemical Reaction Engineering-I", "credits": 4, "isZeroCredit": false },
+            { "code": "CH2202", "name": "Mass Transfer Operations-I", "credits": 3, "isZeroCredit": false },
+            { "code": "CH2203", "name": "Thermo Dynamics-II", "credits": 3, "isZeroCredit": false },
+            { "code": "CS2289", "name": "Object Oriented programming through JAVA Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "CH2281", "name": "Heat Transfer Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "CH2282", "name": "Mechanical Unit Operations Lab", "credits": 1.5, "isZeroCredit": false }
           ]
         },
         "e3s1": {
-          "name": "E3 Sem 1",
+          "name": "E3-S1",
           "courses": [
-            { "code": "25CH3101", "name": "Mass Transfer Operations-I", "credits": 4, "isZeroCredit": false }
+            { "code": "CH3101", "name": "Chemical Process Dynamics and Control", "credits": 4, "isZeroCredit": false },
+            { "code": "CH3102", "name": "Chemical Technology", "credits": 3, "isZeroCredit": false },
+            { "code": "CH3103", "name": "Chemical Reaction Engineering-II", "credits": 3, "isZeroCredit": false },
+            { "code": "CH3104", "name": "Mass Transfer Operations-II", "credits": 3, "isZeroCredit": false },
+            { "code": "CH3105", "name": "Numerical Methods in Chemical Engineering", "credits": 3, "isZeroCredit": false },
+            { "code": "CH3181", "name": "Chemical Reaction Engineering Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "CH3182", "name": "Numerical Methods in Chemical Engineering Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "EG3183", "name": "Employability Skills Lab-2", "credits": 1.5, "isZeroCredit": false }
           ]
         },
         "e3s2": {
-          "name": "E3 Sem 2",
+          "name": "E3-S2",
           "courses": [
-            { "code": "25CH3201", "name": "Chemical Reaction Engineering", "credits": 4, "isZeroCredit": false },
-            { "code": "25CH3292", "name": "Mini Project", "credits": 3, "isZeroCredit": false }
+            { "code": "CH3201", "name": "Process Equipment Design", "credits": 3.5, "isZeroCredit": false },
+            { "code": "CH3202", "name": "Plant Design and Economics", "credits": 3, "isZeroCredit": false },
+            { "code": "CH3203", "name": "Transport Phenomena (Changes in evaluation pattern)", "credits": 4, "isZeroCredit": false },
+            { "code": "CH32XX", "name": "Professional Elective Course-1", "credits": 3, "isZeroCredit": false },
+            { "code": "XX32XX", "name": "Open Elective Course-1", "credits": 3, "isZeroCredit": false },
+            { "code": "CH3281", "name": "Chemical Process Dynamics and Control Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "CH3282", "name": "Mass Transfer Operations Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "EG3283", "name": "Communicative Competence Lab-3", "credits": 1.5, "isZeroCredit": false },
+            { "code": "CH3291", "name": "Summer Internship", "credits": 3, "isZeroCredit": false }
           ]
         },
         "e4s1": {
-          "name": "E4 Sem 1",
+          "name": "E4-S1",
           "courses": [
-            { "code": "25CH4194", "name": "Project Phase-I", "credits": 6, "isZeroCredit": false }
+            { "code": "CH41XX", "name": "Professional Elective Course-2", "credits": 3, "isZeroCredit": false },
+            { "code": "CH41XX", "name": "Professional Elective Course-3", "credits": 3, "isZeroCredit": false },
+            { "code": "XX41XX", "name": "Open Elective Course-2", "credits": 3, "isZeroCredit": false },
+            { "code": "HS4104", "name": "Career Development Course", "credits": 0, "isZeroCredit": true },
+            { "code": "HS2101", "name": "Indian Constitution", "credits": 0, "isZeroCredit": true },
+            { "code": "CH4192", "name": "Project", "credits": 6, "isZeroCredit": false }
           ]
         },
         "e4s2": {
-          "name": "E4 Sem 2",
+          "name": "E4-S2",
           "courses": [
-            { "code": "25CH4295", "name": "Project Phase-II & Dissertation", "credits": 6, "isZeroCredit": false }
-          ]
-        },
-        "summer": {
-          "name": "Summer Semester",
-          "courses": [
-            { "code": "25CH3293", "name": "Summer Internship", "credits": 3, "isZeroCredit": false }
+            { "code": "CH42XX", "name": "Professional Elective Course-4", "credits": 3, "isZeroCredit": false },
+            { "code": "CH42XX", "name": "Professional Elective Course-5", "credits": 3, "isZeroCredit": false },
+            { "code": "XX42XX", "name": "Open Elective Course-3", "credits": 3, "isZeroCredit": false },
+            { "code": "HS4299", "name": "Indian Community Services", "credits": 2, "isZeroCredit": false },
+            { "code": "CH4293", "name": "Project", "credits": 6, "isZeroCredit": false },
+            { "code": "BE1201", "name": "Environmental Sciences", "credits": 0, "isZeroCredit": true }
           ]
         }
       }
@@ -686,61 +775,210 @@
       "name": "Metallurgical & Materials Engineering (MME)",
       "semesters": {
         "e1s1": {
-          "name": "E1 Sem 1",
+          "name": "E1-S1",
           "courses": [
-            { "code": "25MA1102", "name": "Mathematics-I", "credits": 4, "isZeroCredit": false },
-            { "code": "25MM1101", "name": "Introduction to Materials Science", "credits": 3, "isZeroCredit": false },
-            { "code": "25HS1101", "name": "Indian Constitution", "credits": 0, "isZeroCredit": true }
+            { "code": "MA1101", "name": "Engineering Mathematics –I", "credits": 4, "isZeroCredit": false },
+            { "code": "PY1103", "name": "Engineering Physics", "credits": 3, "isZeroCredit": false },
+            { "code": "EC1108", "name": "Basic Electrical and Electronics Engineering", "credits": 3, "isZeroCredit": false },
+            { "code": "CE1114", "name": "Engineering Graphics and Computer Drafting", "credits": 2.5, "isZeroCredit": false },
+            { "code": "EG1182", "name": "English-I", "credits": 2.5, "isZeroCredit": false },
+            { "code": "MM1101", "name": "Introduction to Metallurgical and Materials Engineering", "credits": 2, "isZeroCredit": false },
+            { "code": "PY1183", "name": "Engineering Physics Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "EC1188", "name": "Basic Electrical & Electronics Engineering Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "ME1186", "name": "Workshop Manufacturing Practices", "credits": 1.5, "isZeroCredit": false }
           ]
         },
         "e1s2": {
-          "name": "E1 Sem 2",
+          "name": "E1-S2",
           "courses": [
-            { "code": "25MM1201", "name": "Metallurgical Thermodynamics", "credits": 4, "isZeroCredit": false },
-            { "code": "25BE1201", "name": "Environmental Science", "credits": 0, "isZeroCredit": true }
+            { "code": "MA1201", "name": "Engineering Mathematics – II", "credits": 4, "isZeroCredit": false },
+            { "code": "CY1204", "name": "Engineering Chemistry", "credits": 3, "isZeroCredit": false },
+            { "code": "CS1209", "name": "Programming and Data Structures", "credits": 3, "isZeroCredit": false },
+            { "code": "MM1201", "name": "Materials Thermodynamics", "credits": 4, "isZeroCredit": false },
+            { "code": "MM1202", "name": "Physical Metallurgy", "credits": 4, "isZeroCredit": false },
+            { "code": "CY1284", "name": "Engineering Chemistry Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "CS1289", "name": "Programming and Data Structures Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "MM1281", "name": "Metallography Laboratory", "credits": 1.5, "isZeroCredit": false }
           ]
         },
         "e2s1": {
-          "name": "E2 Sem 1",
+          "name": "E2-S1",
           "courses": [
-            { "code": "25MM2101", "name": "Physical Metallurgy", "credits": 4, "isZeroCredit": false }
+            { "code": "MA2103", "name": "Engineering Mathematics III – Transform Calculus", "credits": 3, "isZeroCredit": false },
+            { "code": "ME2113", "name": "Engineering Mechanics", "credits": 3, "isZeroCredit": false },
+            { "code": "MM2101", "name": "Mineral Processing and Extractive Metallurgy", "credits": 4, "isZeroCredit": false },
+            { "code": "MM2102", "name": "Mechanical Behaviour of Materials", "credits": 4, "isZeroCredit": false },
+            { "code": "MM2103", "name": "Introduction to Transport Phenomena", "credits": 4, "isZeroCredit": false },
+            { "code": "MM2181", "name": "Mineral Processing and Extractive Metallurgy Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "MM2182", "name": "Mechanical Behaviour of Materials Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "BE2101", "name": "Environmental Studies", "credits": 0, "isZeroCredit": true }
           ]
         },
         "e2s2": {
-          "name": "E2 Sem 2",
+          "name": "E2-S2",
           "courses": [
-            { "code": "25MM2201", "name": "Mechanical Metallurgy", "credits": 4, "isZeroCredit": false }
+            { "code": "MM2201", "name": "Corrosion Engineering", "credits": 4, "isZeroCredit": false },
+            { "code": "MM2202", "name": "Iron making Technology", "credits": 3, "isZeroCredit": false },
+            { "code": "MM2203", "name": "Metal Forming", "credits": 3, "isZeroCredit": false },
+            { "code": "MM2204", "name": "Phase Transformations and Heat Treatment", "credits": 4, "isZeroCredit": false },
+            { "code": "MA2201", "name": "Open Elective Course- 1: Mathematics IV", "credits": 3, "isZeroCredit": false },
+            { "code": "MM2281", "name": "Corrosion Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "MM2282", "name": "Metal Forming Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "MM2283", "name": "Phase Transformations and Heat Treatment Laboratory", "credits": 1.5, "isZeroCredit": false }
           ]
         },
         "e3s1": {
-          "name": "E3 Sem 1",
+          "name": "E3-S1",
           "courses": [
-            { "code": "25MM3101", "name": "Iron and Steel Making", "credits": 4, "isZeroCredit": false }
+            { "code": "MM3101", "name": "Foundry Technology", "credits": 3, "isZeroCredit": false },
+            { "code": "MM3102", "name": "Metal Joining Technology", "credits": 4, "isZeroCredit": false },
+            { "code": "MM3103", "name": "Non Ferrous Extractive Metallurgy", "credits": 4, "isZeroCredit": false },
+            { "code": "MM3104", "name": "Steel Making Technology", "credits": 3, "isZeroCredit": false },
+            { "code": "MM31XX", "name": "Professional Elective Course – 1 (Powder Metallurgy)", "credits": 3, "isZeroCredit": false },
+            { "code": "EG3183", "name": "English - II Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "MM3181", "name": "Foundry Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "MM3182", "name": "Metal Joining Laboratory", "credits": 1.5, "isZeroCredit": false }
           ]
         },
         "e3s2": {
-          "name": "E3 Sem 2",
+          "name": "E3-S2",
           "courses": [
-            { "code": "25MM3201", "name": "Non-Ferrous Extractive Metallurgy", "credits": 4, "isZeroCredit": false },
-            { "code": "25MM3292", "name": "Mini Project", "credits": 3, "isZeroCredit": false }
+            { "code": "BM3201", "name": "Mangerial Economics & Financial Analysis", "credits": 3, "isZeroCredit": false },
+            { "code": "MM3201", "name": "Ceramics and Refractories", "credits": 4, "isZeroCredit": false },
+            { "code": "MM3202", "name": "Materials Characterization", "credits": 4, "isZeroCredit": false },
+            { "code": "MM32XX", "name": "Professional Elective Course - 2", "credits": 3, "isZeroCredit": false },
+            { "code": "MM3281", "name": "Modelling and Simulation Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "MM3282", "name": "Materials Characterization Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "MM3295", "name": "Minor Project", "credits": 2, "isZeroCredit": false },
+            { "code": "EG3284", "name": "English - III Laboratory", "credits": 1.5, "isZeroCredit": false },
+            { "code": "HS3201", "name": "Indian Constitution", "credits": 0, "isZeroCredit": true },
+            { "code": "MM3291", "name": "Summer Internship (6-8 Weeks)", "credits": 3, "isZeroCredit": false }
           ]
         },
         "e4s1": {
-          "name": "E4 Sem 1",
+          "name": "E4-S1",
           "courses": [
-            { "code": "25MM4194", "name": "Project Phase-I", "credits": 6, "isZeroCredit": false }
+            { "code": "MM4192", "name": "Major Project -1", "credits": 3, "isZeroCredit": false },
+            { "code": "MM41XX", "name": "Professional Elective Course – 3", "credits": 3, "isZeroCredit": false },
+            { "code": "MM41XX", "name": "Professional Elective Course – 4/MOOCS", "credits": 3, "isZeroCredit": false },
+            { "code": "YY41XX", "name": "Open Elective Course- 2", "credits": 3, "isZeroCredit": false },
+            { "code": "EG4185", "name": "Advanced Soft Skills Lab - IV", "credits": 1.5, "isZeroCredit": false }
           ]
         },
         "e4s2": {
-          "name": "E4 Sem 2",
+          "name": "E4-S2",
           "courses": [
-            { "code": "25MM4295", "name": "Project Phase-II & Dissertation", "credits": 6, "isZeroCredit": false }
+            { "code": "MM4293", "name": "Major Project – 2", "credits": 4, "isZeroCredit": false },
+            { "code": "MM42XX", "name": "Professional Elective Course – 5/MOOCS", "credits": 3, "isZeroCredit": false },
+            { "code": "YY42XX", "name": "Open Elective Course- 3", "credits": 3, "isZeroCredit": false },
+            { "code": "YY42XX", "name": "Open Elective Course- 4/MOOCS", "credits": 3, "isZeroCredit": false },
+            { "code": "HS4299", "name": "Indian Community Services", "credits": 2, "isZeroCredit": false }
+          ]
+        }
+      }
+    },
+    "civil": {
+      "name": "Civil Engineering",
+      "semesters": {
+        "e1s1": {
+          "name": "E1-S1",
+          "courses": [
+            { "code": "20CY1102", "name": "Engineering Chemistry", "credits": 3, "isZeroCredit": false },
+            { "code": "20MA1101", "name": "Differential Equations and Multivariable Calculus", "credits": 4, "isZeroCredit": false },
+            { "code": "20CS1108", "name": "Programming and Data Structures", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE1114", "name": "Engineering Graphics and Computer Drafting", "credits": 2.5, "isZeroCredit": false },
+            { "code": "20CY1182", "name": "Engineering Chemistry Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20EG1181", "name": "English Language Communication Skills Lab-I", "credits": 2.5, "isZeroCredit": false },
+            { "code": "20CS1188", "name": "Programming and Data Structures Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20HS1104", "name": "Aptitude and Reasoning", "credits": 0, "isZeroCredit": true }
           ]
         },
-        "summer": {
-          "name": "Summer Semester",
+        "e1s2": {
+          "name": "E1-S2",
           "courses": [
-            { "code": "25MM3293", "name": "Summer Internship", "credits": 3, "isZeroCredit": false }
+            { "code": "20PY1202", "name": "Engineering Physics", "credits": 3, "isZeroCredit": false },
+            { "code": "20MA1201", "name": "Mathematical Methods", "credits": 4, "isZeroCredit": false },
+            { "code": "20EE1209", "name": "Basic Electrical and Electronics Engineering", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE1201", "name": "Engineering Mechanics", "credits": 4, "isZeroCredit": false },
+            { "code": "20CE1202", "name": "Engineering Geology", "credits": 3, "isZeroCredit": false },
+            { "code": "20PY1282", "name": "Engineering Physics Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20ME1285", "name": "Workshop", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20BE1201", "name": "Environmental Science", "credits": 0, "isZeroCredit": true }
+          ]
+        },
+        "e2s1": {
+          "name": "E2-S1",
+          "courses": [
+            { "code": "20BM2101", "name": "Management Economics and Financial Analysis", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE2101", "name": "Building Materials and Construction", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE2102", "name": "Concrete Technology", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE2103", "name": "Mechanics of Fluids", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE2104", "name": "Mechanics of Materials-I", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE2105", "name": "Surveying-I", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE2181", "name": "Mechanics of Materials Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20CE2182", "name": "Surveying Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20HS2101", "name": "Indian Constitution", "credits": 0, "isZeroCredit": true }
+          ]
+        },
+        "e2s2": {
+          "name": "E2-S2",
+          "courses": [
+            { "code": "20CE2201", "name": "Hydraulics Engineering", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE2202", "name": "Mechanics of Materials-II", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE2203", "name": "Soil Mechanics", "credits": 4, "isZeroCredit": false },
+            { "code": "20CE2204", "name": "Structural Analysis", "credits": 4, "isZeroCredit": false },
+            { "code": "20CE2205", "name": "Surveying-II", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE2206", "name": "Water Resources Engineering", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE2282", "name": "Concrete Technology Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20CE2281", "name": "Hydraulics Engineering Lab", "credits": 1.5, "isZeroCredit": false }
+          ]
+        },
+        "e3s1": {
+          "name": "E3-S1",
+          "courses": [
+            { "code": "20CE3101", "name": "Advanced Structural Analysis", "credits": 4, "isZeroCredit": false },
+            { "code": "20CE3102", "name": "Design of Reinforced concrete Structures", "credits": 4, "isZeroCredit": false },
+            { "code": "20CE3103", "name": "Environmental Engineering-I", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE3104", "name": "Estimation and Costing", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE3105", "name": "Transportation Engineering-I", "credits": 3, "isZeroCredit": false },
+            { "code": "20EG3182", "name": "English Language Communication Skills Lab-II", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20CE3181", "name": "Soil Mechanics Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20CE3182", "name": "Transportation Engineering Lab", "credits": 1.5, "isZeroCredit": false }
+          ]
+        },
+        "e3s2": {
+          "name": "E3-S2",
+          "courses": [
+            { "code": "20CE3201", "name": "Building Planning and Computer Aided Drawing Lab", "credits": 2.5, "isZeroCredit": false },
+            { "code": "20CE3202", "name": "Design of Steel Structures", "credits": 4, "isZeroCredit": false },
+            { "code": "20CE3203", "name": "Environmental Engineering-II", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE3204", "name": "Foundation Engineering", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE3205", "name": "Transportation Engineering-II", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE32XX", "name": "Professional Elective Course-1/MOOC-1", "credits": 3, "isZeroCredit": false },
+            { "code": "20EG3283", "name": "English Language Communication Skills Lab-I", "credits": 1.5, "isZeroCredit": false },
+            { "code": "20CE3282", "name": "Environmental Engineering Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "CE3291", "name": "Summer Internship Project", "credits": 3, "isZeroCredit": false }
+          ]
+        },
+        "e4s1": {
+          "name": "E4-S1",
+          "courses": [
+            { "code": "20CE41XX", "name": "Professional Elective Course-2/MOOC-2", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE41XX", "name": "Professional Elective Course-3", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE41XX", "name": "Professional Elective Course-4", "credits": 3, "isZeroCredit": false },
+            { "code": "20XX41XX", "name": "Open Elective Course-1", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE4191", "name": "Project-1", "credits": 4, "isZeroCredit": false },
+            { "code": "20CE4194", "name": "Seminar", "credits": 0, "isZeroCredit": true }
+          ]
+        },
+        "e4s2": {
+          "name": "E4-S2",
+          "courses": [
+            { "code": "20CE42XX", "name": "Professional Elective Course-5", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE42XX", "name": "Open Elective Course-2/MOOC-3", "credits": 3, "isZeroCredit": false },
+            { "code": "20XX42XX", "name": "Open Elective Course-3", "credits": 3, "isZeroCredit": false },
+            { "code": "20CE4192", "name": "Project-2", "credits": 5, "isZeroCredit": false },
+            { "code": "20HS4299", "name": "Indian Community Services", "credits": 2, "isZeroCredit": false }
           ]
         }
       }
