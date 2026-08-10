@@ -50,51 +50,6 @@ rgukt-academic-calculator/
 
 ---
 
-## 🚀 How to Upload to GitHub
-
-To push this complete project to your GitHub repository:
-`https://github.com/N230711/rgukt-academic-calculator.git`
-
-Open Terminal / Command Prompt in the project folder and run:
-
-```bash
-cd C:\Users\Abhi\.gemini\antigravity\scratch\rgukt-academic-calculator
-
-# 1. Initialize Git repository
-git init
-
-# 2. Add all project files
-git add .
-
-# 3. Commit files
-git commit -m "Initial commit of RGUKT Academic Calculator"
-
-# 4. Set main branch
-git branch -M main
-
-# 5. Add GitHub remote repository
-git remote add origin https://github.com/N230711/rgukt-academic-calculator.git
-
-# 6. Push code to GitHub
-git push -u origin main
-```
-
----
-
-## 🌐 How to Deploy on Netlify
-
-1. Go to [Netlify App](https://app.netlify.com/) and log in.
-2. Click **"Add new site"** → **"Import an existing project"**.
-3. Select **GitHub** as your Git provider and authorize Netlify.
-4. Choose the repository: `N230711/rgukt-academic-calculator`.
-5. Configuration settings:
-   - **Branch to deploy**: `main`
-   - **Build command**: *(Leave blank - pure static site)*
-   - **Publish directory**: `.` *(Root directory)*
-6. Click **"Deploy site"**. Your website will be live in under 10 seconds!
-
----
-
 ## 👨‍💻 Developer & Credits
 
 Designed & Developed by **Hemanth Kumar**  
