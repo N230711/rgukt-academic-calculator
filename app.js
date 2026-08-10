@@ -1,0 +1,867 @@
+/**
+ * RGUKT Academic Calculator - Application Engine
+ * Handles curriculum data, wizard steps, grade validation, SGPA & CGPA calculation, PDF & PNG export.
+ */
+
+// Global App State
+const state = {
+  curriculumData: null,
+  selectedProgram: null,   // 'puc' | 'engineering'
+  selectedBranch: null,    // 'mpc', 'mbipc', 'aiml', 'cse', etc.
+  selectedSemester: null,  // 'e1s1', 'puc1_sem1', etc.
+  currentStep: 1,
+  activeCourses: [],       // Array of current semester courses
+  studentInfo: {
+    name: '',
+    id: ''
+  },
+  calculatedResult: null
+};
+
+// Fallback Curriculum Data in case fetch fails under file:// protocol
+const fallbackCurriculum = {
+  "puc": {
+    "mpc": {
+      "name": "MPC (Mathematics, Physics, Chemistry)",
+      "semesters": {
+        "puc1_sem1": {
+          "name": "PUC 1 Semester 1",
+          "courses": [
+            { "code": "25MA1101", "name": "Mathematics-I", "credits": 4, "isZeroCredit": false },
+            { "code": "25PY1101", "name": "Physics-I", "credits": 4, "isZeroCredit": false },
+            { "code": "25CY1101", "name": "Chemistry-I", "credits": 4, "isZeroCredit": false },
+            { "code": "25EG1101", "name": "English-I", "credits": 3, "isZeroCredit": false },
+            { "code": "25TS1101", "name": "Telugu / Sanskrit-I", "credits": 3, "isZeroCredit": false },
+            { "code": "25CS1101", "name": "Information Technology-I", "credits": 2, "isZeroCredit": false },
+            { "code": "25PY1181", "name": "Physics Lab-I", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25CY1181", "name": "Chemistry Lab-I", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25CS1181", "name": "IT Lab-I", "credits": 1, "isZeroCredit": false }
+          ]
+        },
+        "puc1_sem2": {
+          "name": "PUC 1 Semester 2",
+          "courses": [
+            { "code": "25MA1201", "name": "Mathematics-II", "credits": 4, "isZeroCredit": false },
+            { "code": "25PY1201", "name": "Physics-II", "credits": 4, "isZeroCredit": false },
+            { "code": "25CY1201", "name": "Chemistry-II", "credits": 4, "isZeroCredit": false },
+            { "code": "25EG1201", "name": "English-II", "credits": 3, "isZeroCredit": false },
+            { "code": "25TS1201", "name": "Telugu / Sanskrit-II", "credits": 3, "isZeroCredit": false },
+            { "code": "25PY1281", "name": "Physics Lab-II", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25CY1281", "name": "Chemistry Lab-II", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25SS1201", "name": "Comprehensive Soft Skills", "credits": 0, "isZeroCredit": true }
+          ]
+        },
+        "puc2_sem1": {
+          "name": "PUC 2 Semester 1",
+          "courses": [
+            { "code": "25MA2101", "name": "Mathematics-III", "credits": 4, "isZeroCredit": false },
+            { "code": "25PY2101", "name": "Physics-III", "credits": 4, "isZeroCredit": false },
+            { "code": "25CY2101", "name": "Chemistry-III", "credits": 4, "isZeroCredit": false },
+            { "code": "25EG2101", "name": "English-III", "credits": 3, "isZeroCredit": false },
+            { "code": "25PY2181", "name": "Physics Lab-III", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25CY2181", "name": "Chemistry Lab-III", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25HS2101", "name": "Environmental & Health Studies", "credits": 0, "isZeroCredit": true }
+          ]
+        },
+        "puc2_sem2": {
+          "name": "PUC 2 Semester 2",
+          "courses": [
+            { "code": "25MA2201", "name": "Mathematics-IV", "credits": 4, "isZeroCredit": false },
+            { "code": "25PY2201", "name": "Physics-IV", "credits": 4, "isZeroCredit": false },
+            { "code": "25CY2201", "name": "Chemistry-IV", "credits": 4, "isZeroCredit": false },
+            { "code": "25EG2201", "name": "English-IV", "credits": 3, "isZeroCredit": false },
+            { "code": "25PY2281", "name": "Physics Lab-IV", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25CY2281", "name": "Chemistry Lab-IV", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25PR2201", "name": "Grand Viva / Mini Project", "credits": 2, "isZeroCredit": false }
+          ]
+        }
+      }
+    },
+    "mbipc": {
+      "name": "MBiPC (Maths, Biology, Physics, Chemistry)",
+      "semesters": {
+        "puc1_sem1": {
+          "name": "PUC 1 Semester 1",
+          "courses": [
+            { "code": "25MA1101", "name": "Mathematics-I", "credits": 3, "isZeroCredit": false },
+            { "code": "25BY1101", "name": "Biological Sciences-I", "credits": 4, "isZeroCredit": false },
+            { "code": "25PY1101", "name": "Physics-I", "credits": 3, "isZeroCredit": false },
+            { "code": "25CY1101", "name": "Chemistry-I", "credits": 3, "isZeroCredit": false },
+            { "code": "25EG1101", "name": "English-I", "credits": 3, "isZeroCredit": false },
+            { "code": "25BY1181", "name": "Biology Lab-I", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25PY1181", "name": "Physics Lab-I", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25CY1181", "name": "Chemistry Lab-I", "credits": 1.5, "isZeroCredit": false }
+          ]
+        },
+        "puc1_sem2": {
+          "name": "PUC 1 Semester 2",
+          "courses": [
+            { "code": "25MA1201", "name": "Mathematics-II", "credits": 3, "isZeroCredit": false },
+            { "code": "25BY1201", "name": "Biological Sciences-II", "credits": 4, "isZeroCredit": false },
+            { "code": "25PY1201", "name": "Physics-II", "credits": 3, "isZeroCredit": false },
+            { "code": "25CY1201", "name": "Chemistry-II", "credits": 3, "isZeroCredit": false },
+            { "code": "25EG1201", "name": "English-II", "credits": 3, "isZeroCredit": false },
+            { "code": "25BY1281", "name": "Biology Lab-II", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25PY1281", "name": "Physics Lab-II", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25CY1281", "name": "Chemistry Lab-II", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25HS1201", "name": "Life Skills Education", "credits": 0, "isZeroCredit": true }
+          ]
+        },
+        "puc2_sem1": {
+          "name": "PUC 2 Semester 1",
+          "courses": [
+            { "code": "25MA2101", "name": "Mathematics-III", "credits": 3, "isZeroCredit": false },
+            { "code": "25BY2101", "name": "Biological Sciences-III", "credits": 4, "isZeroCredit": false },
+            { "code": "25PY2101", "name": "Physics-III", "credits": 3, "isZeroCredit": false },
+            { "code": "25CY2101", "name": "Chemistry-III", "credits": 3, "isZeroCredit": false },
+            { "code": "25EG2101", "name": "English-III", "credits": 3, "isZeroCredit": false },
+            { "code": "25BY2181", "name": "Biology Lab-III", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25PY2181", "name": "Physics Lab-III", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25CY2181", "name": "Chemistry Lab-III", "credits": 1.5, "isZeroCredit": false }
+          ]
+        },
+        "puc2_sem2": {
+          "name": "PUC 2 Semester 2",
+          "courses": [
+            { "code": "25MA2201", "name": "Mathematics-IV", "credits": 3, "isZeroCredit": false },
+            { "code": "25BY2201", "name": "Biological Sciences-IV", "credits": 4, "isZeroCredit": false },
+            { "code": "25PY2201", "name": "Physics-IV", "credits": 3, "isZeroCredit": false },
+            { "code": "25CY2201", "name": "Chemistry-IV", "credits": 3, "isZeroCredit": false },
+            { "code": "25EG2201", "name": "English-IV", "credits": 3, "isZeroCredit": false },
+            { "code": "25BY2281", "name": "Biology Lab-IV", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25PY2281", "name": "Physics Lab-IV", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25CY2281", "name": "Chemistry Lab-IV", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25PR2201", "name": "Grand Viva / Practical Assessment", "credits": 2, "isZeroCredit": false }
+          ]
+        }
+      }
+    }
+  },
+  "engineering": {
+    "aiml": {
+      "name": "Artificial Intelligence & Machine Learning (AI & ML)",
+      "semesters": {
+        "e1s1": {
+          "name": "E1 Sem 1",
+          "courses": [
+            { "code": "25MA1102", "name": "Calculus & Linear Algebra", "credits": 4, "isZeroCredit": false },
+            { "code": "25EE1109", "name": "Basic Electrical and Electronics Engineering", "credits": 3, "isZeroCredit": false },
+            { "code": "25AI1101", "name": "Programming for Problem Solving through C", "credits": 4, "isZeroCredit": false },
+            { "code": "25PY1108", "name": "Quantum Physics", "credits": 4, "isZeroCredit": false },
+            { "code": "25EG1181", "name": "English Lab-I", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25PY1189", "name": "Quantum Physics Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25AI1181", "name": "Programming for Problem Solving through C Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25AI1102", "name": "Introduction to AI", "credits": 2, "isZeroCredit": false },
+            { "code": "25HS1101", "name": "Indian Constitution", "credits": 0, "isZeroCredit": true }
+          ]
+        },
+        "e1s2": {
+          "name": "E1 Sem 2",
+          "courses": [
+            { "code": "25MA1202", "name": "Discrete Mathematics", "credits": 4, "isZeroCredit": false },
+            { "code": "25AI1203", "name": "Digital Logic and Computer Organization", "credits": 4, "isZeroCredit": false },
+            { "code": "25AI1201", "name": "Object Oriented Programming through Java", "credits": 4, "isZeroCredit": false },
+            { "code": "25AI1202", "name": "Data Structures", "credits": 4, "isZeroCredit": false },
+            { "code": "25ME1201", "name": "Design Thinking and IDEA Lab", "credits": 1, "isZeroCredit": false },
+            { "code": "25AI1281", "name": "Object Oriented Programming through Java Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25AI1283", "name": "Digital Logic and Computer Organization Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25AI1282", "name": "Data Structures Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25BE1201", "name": "Environmental Science", "credits": 0, "isZeroCredit": true }
+          ]
+        },
+        "e2s1": {
+          "name": "E2 Sem 1",
+          "courses": [
+            { "code": "25MA2106", "name": "Mathematical and Statistical Foundations", "credits": 4, "isZeroCredit": false },
+            { "code": "25AI2104", "name": "Introduction to Data Science", "credits": 3, "isZeroCredit": false },
+            { "code": "25AI2101", "name": "Design & Analysis of Algorithms", "credits": 4, "isZeroCredit": false },
+            { "code": "25AI2102", "name": "Database Management Systems", "credits": 3, "isZeroCredit": false },
+            { "code": "25AI2103", "name": "Automata Theory and Compiler Design", "credits": 4, "isZeroCredit": false },
+            { "code": "25AI2181", "name": "Design & Analysis of Algorithms Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25AI2182", "name": "Database Management Systems Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25MA2111", "name": "Skill Development Course-I", "credits": 1, "isZeroCredit": false }
+          ]
+        },
+        "e2s2": {
+          "name": "E2 Sem 2",
+          "courses": [
+            { "code": "25AI2201", "name": "Web Technologies", "credits": 3, "isZeroCredit": false },
+            { "code": "25AI2202", "name": "Operating Systems", "credits": 3, "isZeroCredit": false },
+            { "code": "25AI2203", "name": "Machine Learning", "credits": 4, "isZeroCredit": false },
+            { "code": "25AI2204", "name": "Computer Networks", "credits": 3, "isZeroCredit": false },
+            { "code": "25AI2205", "name": "Artificial Intelligence", "credits": 4, "isZeroCredit": false },
+            { "code": "25AI2281", "name": "Operating Systems Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25AI2282", "name": "Machine Learning Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25AI2283", "name": "Web Technologies Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25MA2203", "name": "Skill Development Course-II", "credits": 1, "isZeroCredit": false }
+          ]
+        },
+        "e3s1": {
+          "name": "E3 Sem 1",
+          "courses": [
+            { "code": "25AI3101", "name": "Natural Language Processing", "credits": 4, "isZeroCredit": false },
+            { "code": "25AI3102", "name": "Software Engineering", "credits": 3, "isZeroCredit": false },
+            { "code": "25AI3103", "name": "Deep Learning", "credits": 4, "isZeroCredit": false },
+            { "code": "25AI3104", "name": "Knowledge Representation and Reasoning", "credits": 3, "isZeroCredit": false },
+            { "code": "25AI31XX", "name": "Professional Elective-I", "credits": 3, "isZeroCredit": false },
+            { "code": "25AI3181", "name": "Software Engineering Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25AI3182", "name": "Deep Learning Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25AI3191", "name": "Mini Project-I", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25EG3183", "name": "English Lab-II", "credits": 1.5, "isZeroCredit": false }
+          ]
+        },
+        "e3s2": {
+          "name": "E3 Sem 2",
+          "courses": [
+            { "code": "25AI3201", "name": "Introduction to Large Language Models", "credits": 4, "isZeroCredit": false },
+            { "code": "25AI32XX", "name": "Professional Elective-II", "credits": 3, "isZeroCredit": false },
+            { "code": "25AI32XX", "name": "Professional Elective-III", "credits": 3, "isZeroCredit": false },
+            { "code": "25AI32XX", "name": "Industry Certification Course", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25HS32XX", "name": "Entrepreneurial Skill Development", "credits": 3, "isZeroCredit": false },
+            { "code": "25AI3292", "name": "Mini Project-II", "credits": 3, "isZeroCredit": false }
+          ]
+        },
+        "e4s1": {
+          "name": "E4 Sem 1",
+          "courses": [
+            { "code": "25AI41XX", "name": "Professional Elective-IV", "credits": 3, "isZeroCredit": false },
+            { "code": "25AI41XX", "name": "Professional Elective-V", "credits": 3, "isZeroCredit": false },
+            { "code": "25AI41XX", "name": "Open Elective-II", "credits": 3, "isZeroCredit": false },
+            { "code": "25AI4194", "name": "Project-I", "credits": 6, "isZeroCredit": false }
+          ]
+        },
+        "e4s2": {
+          "name": "E4 Sem 2",
+          "courses": [
+            { "code": "25AI42XX", "name": "Open Elective-III", "credits": 3, "isZeroCredit": false },
+            { "code": "25AI42XX", "name": "Open Elective-IV", "credits": 3, "isZeroCredit": false },
+            { "code": "25AI4295", "name": "Project-II & Dissertation", "credits": 6, "isZeroCredit": false },
+            { "code": "25AI4299", "name": "Community Service", "credits": 2, "isZeroCredit": false }
+          ]
+        },
+        "summer": {
+          "name": "Summer Semester",
+          "courses": [
+            { "code": "25AI3293", "name": "Summer Internship", "credits": 3, "isZeroCredit": false }
+          ]
+        }
+      }
+    },
+    "cse": {
+      "name": "Computer Science and Engineering (CSE)",
+      "semesters": {
+        "e1s1": {
+          "name": "E1 Sem 1",
+          "courses": [
+            { "code": "25MA1102", "name": "Calculus & Linear Algebra", "credits": 4, "isZeroCredit": false },
+            { "code": "25EE1109", "name": "Basic Electrical Engineering", "credits": 3, "isZeroCredit": false },
+            { "code": "25CS1101", "name": "Programming for Problem Solving in C", "credits": 4, "isZeroCredit": false },
+            { "code": "25PY1108", "name": "Physics for Computer Engineers", "credits": 4, "isZeroCredit": false },
+            { "code": "25EG1181", "name": "English Communication Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25PY1189", "name": "Engineering Physics Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25CS1181", "name": "C Programming Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25HS1101", "name": "Indian Constitution", "credits": 0, "isZeroCredit": true }
+          ]
+        },
+        "e1s2": {
+          "name": "E1 Sem 2",
+          "courses": [
+            { "code": "25MA1202", "name": "Discrete Mathematics", "credits": 4, "isZeroCredit": false },
+            { "code": "25CS1202", "name": "Digital Logic Design", "credits": 4, "isZeroCredit": false },
+            { "code": "25CS1201", "name": "Object Oriented Programming Java", "credits": 4, "isZeroCredit": false },
+            { "code": "25CS1203", "name": "Data Structures", "credits": 4, "isZeroCredit": false },
+            { "code": "25ME1201", "name": "Engineering Workshop & Design Thinking", "credits": 1, "isZeroCredit": false },
+            { "code": "25CS1281", "name": "Java Programming Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25CS1282", "name": "Data Structures Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25BE1201", "name": "Environmental Science", "credits": 0, "isZeroCredit": true }
+          ]
+        },
+        "e2s1": {
+          "name": "E2 Sem 1",
+          "courses": [
+            { "code": "25MA2106", "name": "Probability & Statistics", "credits": 4, "isZeroCredit": false },
+            { "code": "25CS2101", "name": "Design & Analysis of Algorithms", "credits": 4, "isZeroCredit": false },
+            { "code": "25CS2102", "name": "Database Management Systems", "credits": 3, "isZeroCredit": false },
+            { "code": "25CS2103", "name": "Theory of Computation", "credits": 4, "isZeroCredit": false },
+            { "code": "25CS2104", "name": "Computer Organization & Architecture", "credits": 3, "isZeroCredit": false },
+            { "code": "25CS2181", "name": "Algorithms Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25CS2182", "name": "DBMS Lab", "credits": 1.5, "isZeroCredit": false }
+          ]
+        },
+        "e2s2": {
+          "name": "E2 Sem 2",
+          "courses": [
+            { "code": "25CS2201", "name": "Web Technologies", "credits": 3, "isZeroCredit": false },
+            { "code": "25CS2202", "name": "Operating Systems", "credits": 3, "isZeroCredit": false },
+            { "code": "25CS2204", "name": "Computer Networks", "credits": 3, "isZeroCredit": false },
+            { "code": "25CS2205", "name": "Compiler Design", "credits": 4, "isZeroCredit": false },
+            { "code": "25CS2281", "name": "Operating Systems Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25CS2282", "name": "Networks Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25CS2283", "name": "Web Technologies Lab", "credits": 1.5, "isZeroCredit": false }
+          ]
+        },
+        "e3s1": {
+          "name": "E3 Sem 1",
+          "courses": [
+            { "code": "25CS3101", "name": "Software Engineering", "credits": 3, "isZeroCredit": false },
+            { "code": "25CS3102", "name": "Artificial Intelligence", "credits": 4, "isZeroCredit": false },
+            { "code": "25CS3103", "name": "Machine Learning", "credits": 4, "isZeroCredit": false },
+            { "code": "25CS31XX", "name": "Professional Elective-I", "credits": 3, "isZeroCredit": false },
+            { "code": "25CS3181", "name": "Software Engineering Lab", "credits": 1.5, "isZeroCredit": false },
+            { "code": "25CS3191", "name": "Mini Project-I", "credits": 1.5, "isZeroCredit": false }
+          ]
+        },
+        "e3s2": {
+          "name": "E3 Sem 2",
+          "courses": [
+            { "code": "25CS3201", "name": "Cryptography & Network Security", "credits": 4, "isZeroCredit": false },
+            { "code": "25CS32XX", "name": "Professional Elective-II", "credits": 3, "isZeroCredit": false },
+            { "code": "25CS32XX", "name": "Professional Elective-III", "credits": 3, "isZeroCredit": false },
+            { "code": "25CS32XX", "name": "Open Elective-I", "credits": 3, "isZeroCredit": false },
+            { "code": "25CS3292", "name": "Mini Project-II", "credits": 3, "isZeroCredit": false }
+          ]
+        },
+        "e4s1": {
+          "name": "E4 Sem 1",
+          "courses": [
+            { "code": "25CS41XX", "name": "Professional Elective-IV", "credits": 3, "isZeroCredit": false },
+            { "code": "25CS41XX", "name": "Professional Elective-V", "credits": 3, "isZeroCredit": false },
+            { "code": "25CS41XX", "name": "Open Elective-II", "credits": 3, "isZeroCredit": false },
+            { "code": "25CS4194", "name": "Project-I", "credits": 6, "isZeroCredit": false }
+          ]
+        },
+        "e4s2": {
+          "name": "E4 Sem 2",
+          "courses": [
+            { "code": "25CS42XX", "name": "Open Elective-III", "credits": 3, "isZeroCredit": false },
+            { "code": "25CS4295", "name": "Project-II & Dissertation", "credits": 6, "isZeroCredit": false },
+            { "code": "25CS4299", "name": "Community Service", "credits": 2, "isZeroCredit": false }
+          ]
+        },
+        "summer": {
+          "name": "Summer Semester",
+          "courses": [
+            { "code": "25CS3293", "name": "Summer Internship", "credits": 3, "isZeroCredit": false }
+          ]
+        }
+      }
+    }
+  }
+};
+
+// Grade Point Values
+const GRADE_POINTS = {
+  'S': 10,
+  'A': 9,
+  'B': 8,
+  'C': 7,
+  'D': 6,
+  'E': 5,
+  'F': 0
+};
+
+// Main App Controller Object
+const app = {
+  
+  async init() {
+    console.log("Initializing RGUKT Academic Calculator...");
+    this.setupTheme();
+    await this.loadCurriculum();
+    this.bindEvents();
+    this.initCgpaModalRows();
+    this.updateProgressUI();
+  },
+
+  setupTheme() {
+    const savedTheme = localStorage.getItem('rgukt_theme');
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      document.getElementById('theme-icon').className = 'fa-solid fa-sun';
+    }
+  },
+
+  toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    document.getElementById('theme-icon').className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    localStorage.setItem('rgukt_theme', isDark ? 'dark' : 'light');
+  },
+
+  async loadCurriculum() {
+    try {
+      const response = await fetch('data/curriculum.json');
+      if (!response.ok) throw new Error('Failed to fetch curriculum.json');
+      state.curriculumData = await response.json();
+      console.log("Curriculum data loaded via fetch.");
+    } catch (err) {
+      console.warn("Using embedded fallback curriculum data due to CORS or local file restriction:", err);
+      state.curriculumData = fallbackCurriculum;
+    }
+  },
+
+  bindEvents() {
+    document.getElementById('theme-toggle-btn').addEventListener('click', () => this.toggleTheme());
+    document.getElementById('cgpa-calc-btn').addEventListener('click', () => this.openModal('cgpa-modal'));
+    document.getElementById('about-modal-btn').addEventListener('click', () => this.openModal('about-modal'));
+  },
+
+  // Wizard Step Navigation
+  goToStep(stepNumber) {
+    // Prevent skipping ahead without selecting required options
+    if (stepNumber > 2 && !state.selectedBranch) {
+      alert("Please select your program and branch/stream first.");
+      return;
+    }
+    if (stepNumber > 3 && !state.selectedSemester) {
+      alert("Please select your semester first.");
+      return;
+    }
+
+    state.currentStep = stepNumber;
+
+    // Update Step Active Visibility
+    document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+    document.getElementById(`step-${stepNumber}`).classList.add('active');
+
+    this.updateProgressUI();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  },
+
+  updateProgressUI() {
+    const steps = document.querySelectorAll('.step-item');
+    const stepCount = steps.length;
+    const progressPercent = ((state.currentStep - 1) / (stepCount - 1)) * 100;
+    
+    document.getElementById('progress-line-fill').style.width = `${progressPercent}%`;
+
+    steps.forEach((step, idx) => {
+      const stepNum = idx + 1;
+      step.classList.remove('active', 'completed');
+      if (stepNum < state.currentStep) {
+        step.classList.add('completed');
+      } else if (stepNum === state.currentStep) {
+        step.classList.add('active');
+      }
+    });
+  },
+
+  // Step 1: Program Selection
+  selectProgram(programType) {
+    state.selectedProgram = programType;
+    state.selectedBranch = null;
+    state.selectedSemester = null;
+
+    if (programType === 'puc') {
+      document.getElementById('step2-title').textContent = "Select PUC Stream";
+      document.getElementById('step2-subtitle').textContent = "Choose your stream (MPC or MBiPC)";
+      document.getElementById('puc-stream-container').style.display = 'grid';
+      document.getElementById('eng-branch-container').style.display = 'none';
+    } else {
+      document.getElementById('step2-title').textContent = "Select Engineering Branch";
+      document.getElementById('step2-subtitle').textContent = "Choose your B.Tech engineering branch";
+      document.getElementById('puc-stream-container').style.display = 'none';
+      this.renderEngineeringBranches();
+      document.getElementById('eng-branch-container').style.display = 'grid';
+    }
+
+    this.goToStep(2);
+  },
+
+  renderEngineeringBranches() {
+    const container = document.getElementById('eng-branch-container');
+    const branches = state.curriculumData.engineering;
+    
+    container.innerHTML = '';
+
+    for (const [key, branchObj] of Object.entries(branches)) {
+      const card = document.createElement('div');
+      card.className = `branch-card ${state.selectedBranch === key ? 'selected' : ''}`;
+      card.onclick = () => this.selectBranch(key);
+      
+      const codeUpper = key.toUpperCase();
+      card.innerHTML = `
+        <span class="branch-code">${codeUpper}</span>
+        <span class="branch-name">${branchObj.name}</span>
+      `;
+      container.appendChild(card);
+    }
+  },
+
+  // Step 2: Branch Selection
+  selectBranch(branchKey) {
+    state.selectedBranch = branchKey;
+    state.selectedSemester = null;
+
+    this.renderSemesters();
+    this.goToStep(3);
+  },
+
+  // Step 3: Render Semester Options
+  renderSemesters() {
+    const container = document.getElementById('semester-grid-container');
+    container.innerHTML = '';
+
+    let semData = null;
+    let branchName = "";
+
+    if (state.selectedProgram === 'puc') {
+      semData = state.curriculumData.puc[state.selectedBranch]?.semesters;
+      branchName = state.curriculumData.puc[state.selectedBranch]?.name || state.selectedBranch.toUpperCase();
+    } else {
+      semData = state.curriculumData.engineering[state.selectedBranch]?.semesters;
+      branchName = state.curriculumData.engineering[state.selectedBranch]?.name || state.selectedBranch.toUpperCase();
+    }
+
+    document.getElementById('step3-title').textContent = `${branchName}`;
+    document.getElementById('step3-subtitle').textContent = "Select your current semester";
+
+    if (!semData) {
+      container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">No semester data available for this branch.</div>`;
+      return;
+    }
+
+    for (const [semKey, semObj] of Object.entries(semData)) {
+      const semCard = document.createElement('div');
+      semCard.className = `sem-card ${state.selectedSemester === semKey ? 'selected' : ''}`;
+      semCard.textContent = semObj.name;
+      semCard.onclick = () => this.selectSemester(semKey, semObj.name);
+      container.appendChild(semCard);
+    }
+  },
+
+  // Step 3: Select Semester
+  selectSemester(semKey, semName) {
+    state.selectedSemester = semKey;
+
+    let branchObj = state.selectedProgram === 'puc' 
+      ? state.curriculumData.puc[state.selectedBranch]
+      : state.curriculumData.engineering[state.selectedBranch];
+
+    const semesterObj = branchObj.semesters[semKey];
+    state.activeCourses = JSON.parse(JSON.stringify(semesterObj.courses)); // Deep clone
+
+    document.getElementById('step4-title').textContent = `${semName} Grades`;
+    document.getElementById('step4-subtitle').textContent = `Select grades for ${branchObj.name}`;
+
+    this.renderCourseTable();
+    this.goToStep(4);
+  },
+
+  // Step 4: Render Grade Entry Table
+  renderCourseTable() {
+    const tbody = document.getElementById('course-table-body');
+    tbody.innerHTML = '';
+
+    state.activeCourses.forEach((course, index) => {
+      const tr = document.createElement('tr');
+
+      const isZero = course.isZeroCredit || course.credits === 0;
+
+      let gradeOptionsHTML = '';
+
+      if (isZero) {
+        // Zero Credit PASS / FAIL options
+        gradeOptionsHTML = `
+          <div class="grade-pill-group zero-pass-fail-group">
+            <div class="grade-pill grade-PASS">
+              <input type="radio" id="g_${index}_pass" name="course_grade_${index}" value="PASS">
+              <label for="g_${index}_pass">PASS</label>
+            </div>
+            <div class="grade-pill grade-FAIL">
+              <input type="radio" id="g_${index}_fail" name="course_grade_${index}" value="FAIL">
+              <label for="g_${index}_fail">FAIL</label>
+            </div>
+          </div>
+        `;
+      } else {
+        // Normal Credit S / A / B / C / D / E / F options
+        const grades = ['S', 'A', 'B', 'C', 'D', 'E', 'F'];
+        gradeOptionsHTML = `<div class="grade-pill-group">` + grades.map(g => `
+          <div class="grade-pill grade-${g}">
+            <input type="radio" id="g_${index}_${g}" name="course_grade_${index}" value="${g}">
+            <label for="g_${index}_${g}">${g}</label>
+          </div>
+        `).join('') + `</div>`;
+      }
+
+      tr.innerHTML = `
+        <td>
+          <strong>${course.name}</strong>
+          ${isZero ? '<span class="zero-credit-tag">Zero Credit</span>' : ''}
+        </td>
+        <td><span class="course-code-badge">${course.code}</span></td>
+        <td><strong>${course.credits}</strong></td>
+        <td>${gradeOptionsHTML}</td>
+      `;
+
+      tbody.appendChild(tr);
+    });
+  },
+
+  // Add Custom / Elective Course
+  addCustomCourse() {
+    const name = prompt("Enter Course Name:", "Professional Elective");
+    if (!name) return;
+    const code = prompt("Enter Course Code:", "25XX3101") || "25XX0000";
+    const creditsInput = prompt("Enter Credits (e.g., 3, 1.5, or 0 for zero-credit):", "3");
+    if (creditsInput === null) return;
+    
+    const credits = parseFloat(creditsInput) || 0;
+    const isZeroCredit = credits === 0;
+
+    state.activeCourses.push({
+      name: name,
+      code: code,
+      credits: credits,
+      isZeroCredit: isZeroCredit
+    });
+
+    this.renderCourseTable();
+  },
+
+  // Step 4 -> 5: Calculate Result
+  calculateResult() {
+    let unselectedCount = 0;
+    const courseResults = [];
+
+    let totalPoints = 0;
+    let totalCredits = 0;
+    let hasCreditFail = false;
+    let hasZeroCreditFail = false;
+
+    state.activeCourses.forEach((course, index) => {
+      const selectedRadio = document.querySelector(`input[name="course_grade_${index}"]:checked`);
+      
+      if (!selectedRadio) {
+        unselectedCount++;
+      } else {
+        const gradeVal = selectedRadio.value;
+        const isZero = course.isZeroCredit || course.credits === 0;
+
+        courseResults.push({
+          ...course,
+          grade: gradeVal,
+          isZero: isZero
+        });
+
+        if (isZero) {
+          if (gradeVal === 'FAIL') {
+            hasZeroCreditFail = true;
+          }
+        } else {
+          if (gradeVal === 'F') {
+            hasCreditFail = true;
+          }
+          const gradePoint = GRADE_POINTS[gradeVal] || 0;
+          totalPoints += gradePoint * course.credits;
+          totalCredits += course.credits;
+        }
+      }
+    });
+
+    if (unselectedCount > 0) {
+      alert(`Please select a grade for all ${state.activeCourses.length} subjects before calculating.`);
+      return;
+    }
+
+    // SGPA Calculation
+    const rawSgpa = totalCredits > 0 ? (totalPoints / totalCredits) : 0;
+    const sgpaFormatted = rawSgpa.toFixed(2);
+    const isSemesterPass = !hasCreditFail && !hasZeroCreditFail;
+
+    state.calculatedResult = {
+      sgpa: sgpaFormatted,
+      totalCredits: totalCredits,
+      isPass: isSemesterPass,
+      hasCreditFail: hasCreditFail,
+      hasZeroCreditFail: hasZeroCreditFail,
+      courseResults: courseResults
+    };
+
+    // Capture Student Info
+    state.studentInfo.name = document.getElementById('student-name-input').value.trim() || 'Student';
+    state.studentInfo.id = document.getElementById('student-id-input').value.trim() || 'N/A';
+
+    this.renderResultView();
+    this.goToStep(5);
+  },
+
+  // Step 5: Render Result Summary & Report
+  renderResultView() {
+    const res = state.calculatedResult;
+    if (!res) return;
+
+    // Overview Metric Cards
+    document.getElementById('res-sgpa-val').textContent = res.sgpa;
+    document.getElementById('res-credits-val').textContent = res.totalCredits;
+
+    const statusBadge = document.getElementById('res-status-badge');
+    const alertBanner = document.getElementById('res-alert-banner');
+    const alertText = document.getElementById('res-alert-text');
+
+    if (res.isPass) {
+      statusBadge.className = 'status-badge pass';
+      statusBadge.innerHTML = `<i class="fa-solid fa-circle-check"></i> SEMESTER PASS`;
+      alertBanner.style.display = 'none';
+    } else {
+      statusBadge.className = 'status-badge fail';
+      statusBadge.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> SEMESTER FAIL`;
+      alertBanner.style.display = 'flex';
+
+      let reasons = [];
+      if (res.hasCreditFail) reasons.push("Failed in one or more credit subjects (F grade).");
+      if (res.hasZeroCreditFail) reasons.push("Failed in a mandatory zero-credit subject.");
+      
+      alertText.textContent = reasons.join(" ");
+    }
+
+    // Render Report Container Metadata
+    document.getElementById('report-date-str').textContent = new Date().toLocaleDateString('en-GB');
+    document.getElementById('report-meta-name').textContent = state.studentInfo.name;
+    document.getElementById('report-meta-id').textContent = state.studentInfo.id;
+
+    let branchName = state.selectedProgram === 'puc' 
+      ? state.curriculumData.puc[state.selectedBranch].name
+      : state.curriculumData.engineering[state.selectedBranch].name;
+
+    let semName = state.selectedProgram === 'puc'
+      ? state.curriculumData.puc[state.selectedBranch].semesters[state.selectedSemester].name
+      : state.curriculumData.engineering[state.selectedBranch].semesters[state.selectedSemester].name;
+
+    document.getElementById('report-meta-branch').textContent = branchName;
+    document.getElementById('report-meta-sem').textContent = semName;
+
+    // Report Table Body
+    const tbody = document.getElementById('report-table-body');
+    tbody.innerHTML = '';
+
+    res.courseResults.forEach(c => {
+      const tr = document.createElement('tr');
+      const gradeColorClass = c.isZero 
+        ? (c.grade === 'PASS' ? 'color: var(--success); font-weight:700;' : 'color: var(--danger); font-weight:700;')
+        : (c.grade === 'F' ? 'color: var(--danger); font-weight:700;' : 'font-weight:700;');
+
+      tr.innerHTML = `
+        <td><strong>${c.name}</strong> ${c.isZero ? '<span class="zero-credit-tag">Zero Credit</span>' : ''}</td>
+        <td><span class="course-code-badge">${c.code}</span></td>
+        <td><strong>${c.credits}</strong></td>
+        <td><span style="${gradeColorClass}">${c.grade}</span></td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    // Report Summary Bar
+    document.getElementById('report-summary-credits').textContent = res.totalCredits;
+    document.getElementById('report-summary-sgpa').textContent = res.sgpa;
+    
+    const repStatus = document.getElementById('report-summary-status');
+    if (res.isPass) {
+      repStatus.className = 'status-badge pass';
+      repStatus.innerHTML = `<i class="fa-solid fa-check"></i> SEMESTER PASS`;
+    } else {
+      repStatus.className = 'status-badge fail';
+      repStatus.innerHTML = `<i class="fa-solid fa-xmark"></i> SEMESTER FAIL`;
+    }
+  },
+
+  // Export PDF Handler
+  exportPDF() {
+    const reportElement = document.getElementById('export-report-container');
+    const opt = {
+      margin:       0.4,
+      filename:     `RGUKT_${state.selectedBranch.toUpperCase()}_${state.selectedSemester}_Result.pdf`,
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2, useCORS: true, logging: false },
+      jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+
+    if (window.html2pdf) {
+      window.html2pdf().set(opt).from(reportElement).save();
+    } else {
+      alert("PDF generator library loading. Please check internet connection or use browser Print -> Save as PDF.");
+      window.print();
+    }
+  },
+
+  // Export Image Handler
+  exportImage() {
+    const reportElement = document.getElementById('export-report-container');
+    if (window.html2canvas) {
+      window.html2canvas(reportElement, { scale: 3, useCORS: true }).then(canvas => {
+        const link = document.createElement('a');
+        link.download = `RGUKT_${state.selectedBranch.toUpperCase()}_${state.selectedSemester}_Result.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      });
+    } else {
+      alert("Image generator library is loading. Please try again in a few seconds.");
+    }
+  },
+
+  // Cumulative CGPA Modal Functions
+  initCgpaModalRows() {
+    const container = document.getElementById('cgpa-rows-container');
+    container.innerHTML = '';
+    for (let i = 1; i <= 4; i++) {
+      this.addCgpaRow(`Semester ${i}`);
+    }
+  },
+
+  addCgpaRow(labelPrefix = null) {
+    const container = document.getElementById('cgpa-rows-container');
+    const rowCount = container.children.length + 1;
+    const label = labelPrefix || `Semester ${rowCount}`;
+
+    const row = document.createElement('div');
+    row.className = 'cgpa-sem-row';
+    row.innerHTML = `
+      <span style="font-size:0.85rem; font-weight:600; min-width: 90px;">${label}</span>
+      <input type="number" step="0.01" min="0" max="10" placeholder="SGPA (e.g. 8.5)" class="cgpa-sgpa-input">
+      <input type="number" step="0.5" min="0" placeholder="Credits (e.g. 24)" class="cgpa-credits-input">
+    `;
+    container.appendChild(row);
+  },
+
+  calculateCumulativeCGPA() {
+    const sgpaInputs = document.querySelectorAll('.cgpa-sgpa-input');
+    const creditsInputs = document.querySelectorAll('.cgpa-credits-input');
+
+    let totalPoints = 0;
+    let totalCredits = 0;
+
+    sgpaInputs.forEach((sgpaIn, i) => {
+      const sgpa = parseFloat(sgpaIn.value);
+      const credits = parseFloat(creditsInputs[i].value);
+
+      if (!isNaN(sgpa) && !isNaN(credits) && credits > 0) {
+        totalPoints += sgpa * credits;
+        totalCredits += credits;
+      }
+    });
+
+    if (totalCredits === 0) {
+      alert("Please enter valid SGPA and Credits for at least one semester.");
+      return;
+    }
+
+    const cgpa = (totalPoints / totalCredits).toFixed(2);
+
+    document.getElementById('cgpa-val').textContent = cgpa;
+    document.getElementById('cgpa-total-credits-val').textContent = `Total Cumulative Credits: ${totalCredits}`;
+    document.getElementById('cgpa-result-box').style.display = 'block';
+  },
+
+  // Modal Controls
+  openModal(modalId) {
+    document.getElementById(modalId).classList.add('active');
+  },
+
+  closeModal(modalId) {
+    document.getElementById(modalId).classList.remove('active');
+  }
+};
+
+// Initialize app when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+  app.init();
+});

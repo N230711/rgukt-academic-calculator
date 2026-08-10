@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+      <stop offset="0%" stop-color="#b71c1c" />
+      <stop offset="100%" stop-color="#660000" />
+    </radialGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe082" />
+      <stop offset="50%" stop-color="#ffb300" />
+      <stop offset="100%" stop-color="#ff8f00" />
+    </linearGradient>
+  </defs>
+  <!-- Outer Gold Ring -->
+  <circle cx="100" cy="100" r="96" fill="url(#goldGrad)" />
+  <!-- Inner Maroon Circle -->
+  <circle cx="100" cy="100" r="88" fill="url(#bgGrad)" />
+  <!-- Inner Gold Circle Border -->
+  <circle cx="100" cy="100" r="84" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-dasharray="6 3" />
+  
+  <!-- Emblem - Open Book & Flame -->
+  <!-- Open Book -->
+  <path d="M 50 125 Q 100 115 100 135 Q 100 115 150 125 L 145 95 Q 100 88 100 108 Q 100 88 55 95 Z" fill="url(#goldGrad)" opacity="0.9" />
+  <path d="M 55 128 Q 100 118 100 138 Q 100 118 145 128" fill="none" stroke="#660000" stroke-width="2" />
+  <line x1="100" y1="108" x2="100" y2="138" stroke="#660000" stroke-width="2" />
+
+  <!-- Rising Sun / Knowledge Rays -->
+  <g stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round">
+    <line x1="100" y1="52" x2="100" y2="42" />
+    <line x1="75" y1="60" x2="67" y2="52" />
+    <line x1="125" y1="60" x2="133" y2="52" />
+    <line x1="60" y1="80" x2="50" y2="76" />
+    <line x1="140" y1="80" x2="150" y2="76" />
+  </g>
+  
+  <!-- Torch / Flame -->
+  <path d="M 100 48 C 92 65 108 72 100 88 C 115 75 108 55 100 48 Z" fill="#ff7d00" />
+  <path d="M 100 55 C 95 67 105 72 100 82 C 108 73 104 60 100 55 Z" fill="#ffd54f" />
+
+  <!-- Text Arc Top -->
+  <path id="textArcTop" d="M 30 100 A 70 70 0 1 1 170 100" fill="none" />
+  <text font-family="'Space Grotesk', sans-serif" font-weight="bold" font-size="11" fill="#ffffff" letter-spacing="1.5">
+    <textPath href="#textArcTop" startOffset="50%" text-anchor="middle">
+      RGUKT • AP &amp; TS
+    </textPath>
+  </text>
+  
+  <!-- Text Bottom -->
+  <text x="100" y="162" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="url(#goldGrad)" text-anchor="middle" letter-spacing="2">
+    RGUKT
+  </text>
+  <text x="100" y="174" font-family="'Inter', sans-serif" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.9">
+    CATERING TO RURAL YOUTH
+  </text>
+</svg>
